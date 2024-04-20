@@ -83,17 +83,6 @@
     isNormalUser = true;
     description = "faultypointer";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-       wezterm
-       beeper
-       pkgs.lua54Packages.luasnip
-       gnome.gnome-tweaks
-       heroic
-       strawberry
-       protonvpn-cli
-       qbittorrent
-    ];
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
@@ -107,35 +96,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-    neovim
-    gnumake
-    cmake
-    ripgrep
-    nerdfonts
-    stow
-    gcc_multi
-    fzf
-    unzip
-    lua54Packages.luarocks
-    tree-sitter
-    nodejs_21
-    rustup
-    zig
-    go
-    python3
-    ranger
-    tmux
-    zellij
-    gitui
-    wiki-tui
-    obsidian
-    wireguard-tools
-    logseq
-    zoxide
-    xclip
+    vim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

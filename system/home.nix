@@ -6,6 +6,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     
     ./apps/neovim
+    ./apps/alacritty
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -60,20 +61,7 @@
       gcloud.disabled = true;
       line_break.disabled = true;
     };
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        # draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
+  }; 
   
   programs.bash = {
     enable = true;

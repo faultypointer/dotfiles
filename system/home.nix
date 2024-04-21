@@ -7,6 +7,7 @@
     
     ./apps/neovim
     ./apps/alacritty
+    ./apps/firefox
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -62,6 +63,11 @@
       line_break.disabled = true;
     };
   }; 
+
+  programs.zellij = {
+    enable = true;
+    settings = {};
+  };
   
   programs.bash = {
     enable = true;

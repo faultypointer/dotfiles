@@ -81,6 +81,12 @@
     enableBashIntegration = true;
   };
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   home.sessionVariables.EDITOR = "nvim";
   home.stateVersion = "23.11";
 

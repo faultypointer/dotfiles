@@ -12,6 +12,7 @@
 	    number = true;
 	    relativenumber = true;
 	    shiftwidth = 4;
+	    tabstop = 4;
 	    numberwidth = 4;
 	    undofile = true;
 	    autoindent =true; # Do clever autoindenting

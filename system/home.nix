@@ -44,9 +44,15 @@
     cmake
     gitui
 
+    foliate
     obsidian
     logseq
+
+
+    qbittorrent
+	wiki-tui
   ];
+
 
   programs.git = {
     enable = true;

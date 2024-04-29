@@ -37,6 +37,13 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = [
+      pkgs.fcitx5-mozc
+    ];
+  };
+  
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -97,6 +104,20 @@
     vim
   ];
 
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Name = "Hello";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -106,6 +127,9 @@
   # };
 
   # List services that you want to enable:
+  services.fprintd = {
+	enable = true;
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

@@ -29,10 +29,10 @@
 	profiles = {
 	    default = {
 	    id = 0;
-	    name = "tesseract";
+	    name = "hypercube";
 	    isDefault = true;
 	    settings = {
-		"browser.startup.homepage" = "https://start.duckduckgo.com";
+		"browser.startup.homepage" = "https://faultypointer.github.io/Bento/";
 		"browser.search.defaultenginename" = "duckduckgo";
 		"browser.search.order.1" = "Searx";
 		"browser.shell.checkDefaultBrowser" = false;

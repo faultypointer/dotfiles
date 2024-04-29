@@ -28,6 +28,8 @@
 			    exportPdf = "onType";
 			};
 		   };
+		   gopls.enable = true;
+		   zls.enable = true;
 	       };
 	  };
 
@@ -37,7 +39,9 @@
               "nil_ls"
               "rust-analyzer"
 	      "pylsp"
+	      "gopls"
 	      "ccls"
+		  "zls"
             ];
           };
      };

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+COMMANDS=("rust" "python" "go" "empty")
+
+if [ -n "$1" ]; then
+  SELECTED_COMMAND="$1"
+else
+  SELECTED_COMMAND=$(printf "%s\n" "${COMMANDS[@]}" | fzf --border=rounded --layout=reverse --height='40%')
+  nix flake init --template "github:the-nix-way/dev-templates#${SELECTED_COMMAND}"
+fi
+
+# function rust() {
+#   nix flake init --templates "github:the-nix-way/dev-templates#rust"
+# }
+#
+# function python() {
+#   nix flake init --templates "github:the-nix-way/dev-templates#python"
+# }
+# function go() {
+#   nix flake init --templates "github:the-nix-way/dev-templates#go"
+# }
+# function empty() {
+#   nix flake init --templates "github:the-nix-way/dev-templates#empty"
+# }
+
+
+# case "$SELECTED_COMMAND" in
+#   "rust")
+#     rust
+#     ;;
+#   "exit")
+#     echo "Exiting..."
+#     exit
+#     ;;
+#   "python")
+#     python
+#     ;;
+#   "go")
+#     go
+#     ;;
+#   "empty")
+# 	empty
+# 	;;
+#   *)
+#     echo "Please input a valid argument."
+#     ;;
+# esac

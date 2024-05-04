@@ -1,0 +1,40 @@
+#!/bin/sh
+
+COMMANDS=("rebuild" "exit" "update" "garbage collect")
+
+if [ -n "$1" ]; then
+  SELECTED_COMMAND="$1"
+else
+  SELECTED_COMMAND=$(printf "%s\n" "${COMMANDS[@]}" | fzf --border=rounded --layout=reverse --height='40%')
+fi
+
+function rebuild() {
+  sudo nixos-rebuild switch --flake /home/faulty/dotfiles/system
+}
+
+function update() {
+  sudo nix flake update /home/faulty/dotfiles/system
+}
+
+function collect_garbage() {
+  sudo nix-collect-garbage -d
+}
+
+case "$SELECTED_COMMAND" in
+  "rebuild")
+    rebuild
+    ;;
+  "exit")
+    echo "Exiting..."
+    exit
+    ;;
+  "update")
+    update
+    ;;
+  "garbage collect")
+    collect_garbage
+    ;;
+  *)
+    echo "Please input a valid argument."
+    ;;
+esac

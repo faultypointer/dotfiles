@@ -41,6 +41,7 @@
     enabled = "fcitx5";
     fcitx5.addons = [
       pkgs.fcitx5-mozc
+	  pkgs.fcitx5-m17n
     ];
   };
   
@@ -51,6 +52,21 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+	gnome-connections
+  ]) ++ (with pkgs.gnome; [
+    gnome-terminal
+    epiphany # web browser
+    geary # email reader
+    totem # video player
+	gnome-shell-extensions
+	gnome-maps
+	gnome-music
+	simple-scan
+	gnome-contacts
+  ]);
   
 
   # zsh shell

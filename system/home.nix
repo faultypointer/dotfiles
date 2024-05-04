@@ -6,8 +6,8 @@
     inputs.nixvim.homeManagerModules.nixvim
     
     ./apps/neovim
-    ./apps/alacritty
     ./apps/firefox
+	./apps/zellij
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
     neofetch
+	blackbox-terminal
 
     zip
     xz
@@ -36,9 +37,7 @@
     usbutils
 
     nerdfonts
-    wezterm
     beeper
-    strawberry
     
     gnumake
     cmake
@@ -49,8 +48,23 @@
     logseq
 
 
-    qbittorrent
+    nodePackages.webtorrent-cli
+	magic-wormhole-rs
 	wiki-tui
+	mpv
+	webcord
+	adw-gtk3
+	gnome.gnome-tweaks
+	amberol
+	gnome-extension-manager
+	gnomeExtensions.pano
+
+	# potential hobby
+	krita
+	blender
+	
+
+	gnomeExtensions.battery-health-charging
   ];
 
 
@@ -66,14 +80,14 @@
       add_newline = false;
       aws.disabled = true;
       gcloud.disabled = true;
-      line_break.disabled = true;
+      line_break.disabled = false;
     };
   }; 
 
-  programs.zellij = {
-    enable = true;
-    settings = {};
-  };
+  # programs.zellij = {
+  #   enable = true;
+  #   settings = {};
+  # };
   
   programs.bash = {
     enable = true;
@@ -83,7 +97,9 @@
       z = "zoxide";
       cd = "z";
 
-      ls = "eza";
+      ls = "eza --icons";
+	  tess = "$HOME/dotfiles/shell/tess";
+	  dev = "$HOME/dotfiles/shell/developer";
     };
     bashrcExtra = ''
     '';

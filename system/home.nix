@@ -25,6 +25,7 @@
     p7zip
 
     ripgrep
+	lazygit
     eza
     fzf
     xclip
@@ -80,6 +81,7 @@
       add_newline = false;
       aws.disabled = true;
       gcloud.disabled = true;
+	  format = "$nix_shell$git_branch$git_commit$git_state$git_status$directory$cmd_duration\n$character";
       line_break.disabled = false;
     };
   }; 
@@ -101,7 +103,8 @@
 	  tess = "$HOME/dotfiles/shell/tess";
 	  dev = "$HOME/dotfiles/shell/developer";
     };
-    bashrcExtra = ''
+    initExtra = ''
+		export DIRENV_LOG_FORMAT=
     '';
   };
   programs.zoxide = {

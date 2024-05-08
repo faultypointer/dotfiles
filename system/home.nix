@@ -65,7 +65,7 @@
 	blender
 	
 
-  	zed
+  	zed-editor
   ];
 
 

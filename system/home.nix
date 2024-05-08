@@ -65,7 +65,7 @@
 	blender
 	
 
-	gnomeExtensions.battery-health-charging
+  	zed
   ];
 
 

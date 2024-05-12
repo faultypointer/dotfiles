@@ -18,10 +18,10 @@
 		       installCargo = true;
 		       installRustc = true;
 		   };
-		   # pylsp = {
-		   #     enable = true;
-		   #     settings.plugins.black.enabled = true;
-		   # };
+		   pylsp = {
+		       enable = true;
+		       settings.plugins.black.enabled = true;
+		   };
 		   typst-lsp = {
 			enable = true;
 			extraOptions.settings = {
@@ -30,6 +30,7 @@
 		   };
 		   gopls.enable = true;
 		   zls.enable = true;
+		   tailwindcss.enable = true;
 	       };
 	  };
 

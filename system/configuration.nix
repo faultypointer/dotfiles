@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+	  ./hyprland.nix
     ];
 
   # Bootloader.
@@ -71,7 +72,6 @@
   
 
   # zsh shell
-  programs.zsh.enable = true;
 
   # Configure keymap in X11
   services.xserver = {

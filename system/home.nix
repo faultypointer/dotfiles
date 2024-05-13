@@ -86,10 +86,10 @@
     };
   }; 
 
-  # programs.zellij = {
-  #   enable = true;
-  #   settings = {};
-  # };
+  gtk.iconTheme = {
+    package = pkgs.gnome.adwaita-icon-theme;
+    name = "adwaita-icon-theme";
+  };
   
   programs.bash = {
     enable = true;

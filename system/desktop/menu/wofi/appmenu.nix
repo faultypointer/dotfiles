@@ -7,11 +7,11 @@
       xoffset = 10;
       yoffset = 10;
       allow_markup = true;
-      width = 300;
+      width = 320;
       show = "drun";
       prompt = "Apps";
       term = "alacritty";
-      height = 705;
+      height = 1015;
       orientation = "vertical";
       line_wrap = "off";
       dynamic_lines = false;

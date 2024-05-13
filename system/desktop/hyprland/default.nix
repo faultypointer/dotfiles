@@ -68,15 +68,15 @@ in
       bind =
         [
           "$mod, Return, exec, alacritty -e zellij"
-          "$mod, F, exec, firefox-devedition"
-	  "$mod, Q, killactive,"
-	  ", PRINT, exec, pishot region"
-	  "$mod, PRINT, exec, pishot display"
-	  "ALT, PRINT, exec, pishot window"
-	  "$mod, Space, togglefloating,"
-	  "ALT, Space, exec, pgrep wofi && pkill wofi || wofi --show drun"
-	  "$mod,L, exec, caffeine"
-	  "SUPER_SHIFT, V, exec, wofi-clipboard | wl-copy"
+          "$mod, F, exec, firefox"
+		  "$mod, Q, killactive,"
+		  ", PRINT, exec, pishot region"
+		  "$mod, PRINT, exec, pishot display"
+		  "ALT, PRINT, exec, pishot window"
+		  "$mod, Space, togglefloating,"
+		  "ALT, Space, exec, pgrep wofi && pkill wofi || wofi --show drun"
+		  "$mod,L, exec, caffeine"
+		  "SUPER_SHIFT, V, exec, wofi-clipboard | wl-copy"
         ]
         ++ (
           # workspaces

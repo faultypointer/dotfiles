@@ -6,7 +6,7 @@ let
 
     entries="⇠ Logout\n⏾ Suspend\n⭮ Reboot\n⏻  Shutdown\n< Lock"
 
-    selected=$(pgrep wofi && pkill wofi || echo -e $entries | wofi --xoffset=1182 --yoffset=10  --width 100 --height 220 --dmenu --prompt=Power --cache-file /dev/null | awk '{print tolower($2)}')
+    selected=$(pgrep wofi && pkill wofi || echo -e $entries | wofi --xoffset=1736 --yoffset=10  --width 100 --height 200 --dmenu --prompt=Power --cache-file /dev/null | awk '{print tolower($2)}')
 
     case $selected in
       logout)

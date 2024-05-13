@@ -10,7 +10,10 @@
       ./hardware-configuration.nix
 	  ./hyprland.nix
 	  ./polkit.nix
+	  ./greetd.nix
     ];
+
+  home-manager.backupFileExtension = "backup";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

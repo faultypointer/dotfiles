@@ -86,11 +86,18 @@
     };
   }; 
 
-  gtk.iconTheme = {
-    package = pkgs.gnome.adwaita-icon-theme;
-    name = "adwaita-icon-theme";
+  gtk = {
+	  enable = true;
+	  theme = {
+		  name = "adw-gtk3";
+		  package = pkgs.adw-gtk3;
+	  };
+	  iconTheme = {
+		  package = pkgs.gnome.adwaita-icon-theme;
+		  name = "adwaita-icon-theme";
+	  };
   };
-  
+
   programs.bash = {
     enable = true;
     enableCompletion = true;

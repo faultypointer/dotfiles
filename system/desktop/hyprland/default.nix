@@ -15,7 +15,6 @@ in
 
     settings = {
       exec-once = [
-	"${pkgs.waybar}/bin/waybar"
 	"${pkgs.hyprpaper}/bin/hyprpaper"
 	"${pkgs.hypridle}/bin/hypridle"
 	"wl-paste --watch cliphist store"
@@ -69,6 +68,7 @@ in
         [
           "$mod, Return, exec, alacritty -e zellij"
           "$mod, F, exec, firefox"
+          "$mod, W, exec, pgrep waybar && pkill waybar || waybar &"
 		  "$mod, Q, killactive,"
 		  ", PRINT, exec, pishot region"
 		  "$mod, PRINT, exec, pishot display"

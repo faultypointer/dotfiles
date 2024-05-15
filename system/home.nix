@@ -8,6 +8,8 @@
     ./apps/neovim
     ./apps/firefox
 	./apps/zellij
+	./apps/alacritty
+	./desktop
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -18,6 +20,7 @@
   home.packages = with pkgs; [
     neofetch
 	blackbox-terminal
+	imagemagick
 
     zip
     xz
@@ -63,8 +66,6 @@
 	# potential hobby
 	krita
 	blender
-	
-
   ];
   
   gtk = {
@@ -97,11 +98,6 @@
     };
   }; 
 
-  # programs.zellij = {
-  #   enable = true;
-  #   settings = {};
-  # };
-  
   programs.bash = {
     enable = true;
     enableCompletion = true;

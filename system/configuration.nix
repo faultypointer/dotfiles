@@ -8,7 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+	  ./hyprland.nix
+	  ./polkit.nix
+	  ./greetd.nix
     ];
+
+  home-manager.backupFileExtension = "backup";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -71,7 +76,6 @@
   
 
   # zsh shell
-  programs.zsh.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -138,10 +142,13 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+
+  services.dbus.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+	pinentryPackage = pkgs.pinentry-curses;
+  };
 
   # List services that you want to enable:
   services.fprintd = {

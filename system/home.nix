@@ -8,6 +8,7 @@
     ./apps/neovim
     ./apps/firefox
 	./apps/zellij
+	./apps/newsboat
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 

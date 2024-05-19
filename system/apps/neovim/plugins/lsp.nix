@@ -30,6 +30,8 @@
 		   };
 		   gopls.enable = true;
 		   zls.enable = true;
+		   astro.enable = true;
+		   tsserver.enable = true;
 	       };
 	  };
 

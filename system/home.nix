@@ -9,6 +9,7 @@
     ./apps/firefox
 	./apps/zellij
 	./apps/newsboat
+	./apps/kitty
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -55,7 +56,6 @@
 	wiki-tui
 	mpv
 	webcord
-	adw-gtk3
 	gnome.gnome-tweaks
 	amberol
 	gnome-extension-manager
@@ -79,6 +79,7 @@
 	  name = "adwaita-icon-theme";
 	};
   };
+
 
 
   programs.git = {

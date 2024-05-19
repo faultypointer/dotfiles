@@ -44,7 +44,10 @@
 	    extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 		ublock-origin
 		bitwarden
-		vimium
+		sidebery
+		sponsorblock
+		i-dont-care-about-cookies
+		duckduckgo-privacy-essentials
 	    ];
 	    settings = {
 		"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
@@ -52,6 +55,7 @@
 		"svg.context-properties.content.enabled" = true;
 		"general.smoothScroll" = true;
 	    };
+		userChrome = (builtins.readFile ./userChrome.css);
 	    extraConfig = ''
 		user_pref("full-screen-api.ignore-widgets", true);
 		user_pref("media.ffmpeg.vaapi.enabled", true);

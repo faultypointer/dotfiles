@@ -62,7 +62,6 @@
     epiphany # web browser
     geary # email reader
     totem # video player
-	gnome-shell-extensions
 	gnome-maps
 	gnome-music
 	simple-scan

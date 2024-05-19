@@ -96,12 +96,6 @@
 
 /* Custom Settings */
 
-*
-{
-  font-family: "FantasqueSansM Nerd Font" !important;
-  font-size: 16px !important;
-}
-
 .titlebar-buttonbox-container{ display:none }
 
 #TabsToolbar .titlebar-spacer {
@@ -123,9 +117,9 @@ browser {
 /* want to show the URL Bar    */
 /*─────────────────────────────*/
 
-/* .urlbarView { */
-/*   display: none !important; */
-/* } */
+.urlbarView {
+  display: none !important;
+}
 
 .urlbarView-row-inner, .urlbarView-no-wrap  {
 	align-items: center !important;
@@ -233,7 +227,7 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 }
 
 /* Disable elements  */
-#context-navigation,
+/* #context-navigation, */
 #context-savepage,
 #context-pocket,
 #context-sendpagetodevice,

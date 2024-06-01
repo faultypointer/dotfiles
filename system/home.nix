@@ -50,6 +50,9 @@
     obsidian
     logseq
 
+	typst
+	zathura
+
 
     nodePackages.webtorrent-cli
 	magic-wormhole-rs
@@ -63,9 +66,9 @@
 
 	# potential hobby
 	krita
-	blender
-	
-
+	blender	
+	gimp
+	godot_4
   ];
   
   gtk = {

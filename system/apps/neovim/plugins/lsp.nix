@@ -44,6 +44,7 @@
 	      "gopls"
 	      "ccls"
 		  "zls"
+		  "typst-lsp"
             ];
           };
      };

@@ -76,6 +76,7 @@
     xkb.variant = "";
   };
 
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

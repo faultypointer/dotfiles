@@ -45,8 +45,10 @@
     gnumake
     cmake
     gitui
+	octaveFull
 
     foliate
+	gnome.gnome-mines
     obsidian
     logseq
 

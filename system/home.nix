@@ -9,7 +9,8 @@
     ./apps/firefox
 	./apps/zellij
 	./apps/newsboat
-	./apps/kitty
+	# ./apps/kitty
+	./apps/alacritty
   ];
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-light-soft;
 
@@ -54,9 +55,10 @@
 
 	typst
 	zathura
+	appimage-run
+	anki
 
 
-    nodePackages.webtorrent-cli
 	magic-wormhole-rs
 	wiki-tui
 	mpv

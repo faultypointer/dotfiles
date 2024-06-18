@@ -5,7 +5,7 @@
 
 	       servers = {
 		   lua-ls.enable = true;
-		   nil_ls.enable = true;
+		   nil-ls.enable = true;
 		   ccls.enable = true;
 		   ltex = {
 		       enable = true;
@@ -38,7 +38,7 @@
           lsp-format = {
             enable = true;
             lspServersToEnable = [
-              "nil_ls"
+              "nil-ls"
               "rust-analyzer"
 	      "pylsp"
 	      "gopls"

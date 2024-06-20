@@ -22,6 +22,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
+
   outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs : {
     nixosConfigurations.hypercube = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";

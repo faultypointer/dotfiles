@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, inputs, ... }: {
 
   imports = [
     ./variables.nix
@@ -13,6 +13,7 @@
     ../../home/programs/spicetify
     ../../home/programs/btop
     ../../home/programs/cava
+    ../../home/programs/firefox
 
     # Scripts
     ../../home/scripts # All scripts
@@ -65,7 +66,7 @@
     };
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".profile_picture.png" = { source = ./profile_picture.png; };
+    file.".profile_picture.png" = { source = ./hikaru.jpg; };
 
     # Don't touch this
     stateVersion = "24.05";

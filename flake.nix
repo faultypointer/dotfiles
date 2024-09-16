@@ -32,6 +32,10 @@
       url = "github:MeanderingProgrammer/markdown.nvim";
       flake = false;
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, ... }: {
@@ -45,7 +49,10 @@
           }
           inputs.nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.home-manager
-          { home-manager.backupFileExtension = "backup"; }
+          {
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
           ./hosts/hypercube/configuration.nix
         ];
       };

@@ -1,5 +1,5 @@
 {
-  wallpaper = "nix.png";
+  wallpaper = "tshd.jpg";
 
   font = "SFProDisplay Nerd Font";
   font-mono = "FiraCode Nerd Font Mono";

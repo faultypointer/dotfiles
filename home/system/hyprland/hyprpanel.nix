@@ -74,14 +74,14 @@
             && config.var.theme.bar.transparent then
               "0"
             else
-              "8"
+              "2"
           }px",
           "theme.bar.buttons.y_margins": "${
             if config.var.theme.bar.floating
             && config.var.theme.bar.transparent then
               "0"
             else
-              "8"
+              "2"
           }px",
           "theme.bar.buttons.spacing": "0.3em",
           "theme.bar.buttons.radius": "${
@@ -100,7 +100,7 @@
           "theme.bar.buttons.workspaces.active": "#${config.var.theme.colors.accent}",
           "theme.bar.buttons.workspaces.available": "#${config.var.theme.colors.bg}",
 
-          "theme.bar.margin_top": "1.0em",
+          "theme.bar.margin_top": "0.4em",
           "theme.bar.margin_sides": "${toString config.var.theme.gaps-out}px",
           "theme.bar.margin_bottom": "0px",
           "theme.bar.border_radius": "${toString config.var.theme.rounding}px",

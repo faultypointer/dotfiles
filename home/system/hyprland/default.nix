@@ -36,12 +36,7 @@
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
 
-      exec-once = [
-        "${pkgs.bitwarden}/bin/bitwarden"
-        "[[ ${
-          toString config.var.sops
-        } == 1 ]] && systemctl --user start sops-nix"
-      ];
+      exec-once = [ "${pkgs.bitwarden}/bin/bitwarden" ];
 
       monitor = [ "eDP-2,highres,0x0,1" ",prefered,auto,1" ];
 

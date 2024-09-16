@@ -13,7 +13,6 @@
     ../../home/programs/spicetify
     ../../home/programs/btop
     ../../home/programs/cava
-    ../../home/programs/nextcloud
 
     # Scripts
     ../../home/scripts # All scripts
@@ -29,7 +28,6 @@
     ../../home/system/udiskie
     ../../home/system/clipman
 
-    ./secrets # You should probably remove this line
   ];
 
   home = {
@@ -42,15 +40,8 @@
       xfce.thunar
       bitwarden
       vlc
-
-      # Dev
-      go
-      nodejs
-      python3
-      jq
-      nurl
-      prefetch-npm-deps
-      figlet
+      obsidian
+      appflowy
 
       # Utils
       zip
@@ -59,18 +50,12 @@
       optipng
       pfetch
       pandoc
-      tailscale
 
       # Just cool
       peaclock
       cbonsai
       pipes
       cmatrix
-
-      # Backup
-      vscode
-      firefox
-      neovide
     ];
 
     # Import wallpapers into $HOME/wallpapers

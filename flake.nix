@@ -19,10 +19,6 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -40,29 +36,19 @@
 
   outputs = inputs@{ nixpkgs, ... }: {
     nixosConfigurations = {
-      nixy = nixpkgs.lib.nixosSystem { # CHANGEME
+      hypercube = nixpkgs.lib.nixosSystem { # CHANGEME
         system = "x86_64-linux";
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
             _module.args = { inherit inputs; };
           }
-          inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.home-manager
-          ./hosts/laptop/configuration.nix # CHANGEME
+          { home-manager.backupFileExtension = "backup"; }
+          ./hosts/hypercube/configuration.nix
         ];
       };
-
-      jack = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          { _module.args = { inherit inputs; }; }
-          inputs.sops-nix.nixosModules.sops
-          inputs.home-manager.nixosModules.home-manager
-          ./hosts/server/configuration.nix
-        ];
-      };
-
     };
   };
 }

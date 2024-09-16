@@ -2,33 +2,29 @@
   imports = [ ../modules/variables-config.nix ];
 
   config.var = {
-    hostname = "nixy";
-    username = "hadi";
+    hostname = "hypercube";
+    username = "faulty";
     homeDirectory = "/home/" + config.var.username;
-    configDirectory = config.var.homeDirectory + "/.config/nixos";
+    configDirectory = config.var.homeDirectory + "/.dotfiles/nixos";
 
-    keyboardLayout = "fr";
+    keyboardLayout = "us";
 
-    location = "Paris";
-    timeZone = "Europe/Paris";
+    location = "";
+    timeZone = "Asia/Kathmandu";
     defaultLocale = "en_US.UTF-8";
-    extraLocale = "fr_FR.UTF-8";
+    extraLocale = "en_US.UTF-8";
 
     git = {
-      username = "Hadi";
-      email = "112569860+anotherhadi@users.noreply.github.com";
+      username = "faultypointer";
+      email = "faultypointer@proton.me";
     };
 
     autoUpgrade = false;
     autoGarbageCollector = false;
 
-    # SOPS
-    # Sops is a tool to store secrets in git repositories encrypted with GPG.
-    # change the sops configuration if you want to enable that:
-    sops = true;
 
     # Enable tailscale
-    tailscale = true;
+    tailscale = false;
 
     # USBGuard
     # If usbguard enabled: set yours pref USB devices (change {id} to your trusted USB device), use `lsusb` command (from usbutils package) to get list 
@@ -37,6 +33,6 @@
     usbguard = false;
     usbguardRules = "";
 
-    theme = import ../themes/nixy.nix; # select your theme here
+    theme = import ../themes/hikaru.nix; # select your theme here
   };
 }

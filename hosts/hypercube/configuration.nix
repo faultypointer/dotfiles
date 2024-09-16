@@ -1,8 +1,6 @@
 { config, ... }: {
   imports = [
     ../modules/fonts.nix
-    ../modules/nvidia.nix
-    ../modules/prime.nix
     ../modules/zsh.nix
     ../modules/tuigreet.nix
     ../modules/auto-upgrade.nix
@@ -12,7 +10,6 @@
     ../modules/users.nix
     ../modules/audio.nix
     ../modules/bluetooth.nix
-    ../modules/tailscale.nix
     ../modules/nix.nix
     ../modules/network-manager.nix
     ../modules/home-manager.nix

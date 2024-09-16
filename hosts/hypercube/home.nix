@@ -14,6 +14,7 @@
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/firefox
+    ../../home/programs/direnv
 
     # Scripts
     ../../home/scripts # All scripts

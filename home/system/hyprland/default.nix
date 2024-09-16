@@ -59,6 +59,8 @@
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
         "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
         "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
+        "$mod, W, exec, firefox" # Qutebrowser
+        "$mod, O, exec, obsidian" # Qutebrowser
         "$mod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
@@ -78,7 +80,7 @@
         "$mod, PRINT, exec, screenshot window" # Screenshot window
         ", PRINT, exec, screenshot monitor" # Screenshot monitor
         "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
-        "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
+        "$mod, S, exec, screenshot region swappy" # Screenshot region then edit
 
         "$shiftMod, S, exec, ${pkgs.qutebrowser}/bin/qutebrowser :open $(wofi --show dmenu -L 1 -p ' Search on internet')" # Search on internet with wofi
         "$shiftMod, C, exec, clipboard" # Clipboard picker with wofi

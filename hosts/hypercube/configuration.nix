@@ -16,6 +16,7 @@
     ../modules/power-profiles.nix
     ../modules/utils.nix
     ../modules/gvfs.nix
+    ../modules/xdg-portal.nix
     # ../modules/ovpn.nix
 
     ./hardware-configuration.nix

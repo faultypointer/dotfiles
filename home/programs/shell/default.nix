@@ -4,7 +4,8 @@
     ./zsh.nix
     ./starship.nix
     ./zoxide.nix
-    ./tmux.nix
+    # ./tmux.nix
+    ./zellij.nix
     ./lazygit.nix
     ./eza.nix
   ];

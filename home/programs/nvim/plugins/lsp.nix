@@ -12,6 +12,7 @@
         # html.enable = true; # FIXME: broken for some reason
         svelte.enable = true;
         marksman.enable = true;
+        rust-analyzer.enable = true;
         ltex = {
           enable = false;
           settings = {

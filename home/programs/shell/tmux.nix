@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.tmux = {
-    enable = false;
+    enable = true;
     mouse = true;
     shell = "${pkgs.zsh}/bin/zsh";
     prefix = "C-s";

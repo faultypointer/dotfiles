@@ -52,6 +52,7 @@
       optipng
       pfetch
       pandoc
+      tiv
 
       # Just cool
       peaclock

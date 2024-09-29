@@ -77,10 +77,10 @@
         "$shiftMod, left, layoutmsg, addmaster" # Add to master
         "$shiftMod, right, layoutmsg, removemaster" # Remove from master
 
-        "$mod, PRINT, exec, screenshot window" # Screenshot window
-        ", PRINT, exec, screenshot monitor" # Screenshot monitor
-        "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
-        "$mod, S, exec, screenshot region swappy" # Screenshot region then edit
+        "$mod, PRINT, exec, pishot display" # Screenshot window
+        ", PRINT, exec, pishot region" # Screenshot region
+        "$ALT, PRINT, exec, pishot window" # Screenshot region
+        "$mod, S, exec, pishot region"
 
         "$shiftMod, S, exec, ${pkgs.qutebrowser}/bin/qutebrowser :open $(wofi --show dmenu -L 1 -p ' Search on internet')" # Search on internet with wofi
         "$shiftMod, C, exec, clipboard" # Clipboard picker with wofi

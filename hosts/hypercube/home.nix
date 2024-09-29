@@ -15,6 +15,7 @@
     ../../home/programs/cava
     ../../home/programs/firefox
     ../../home/programs/direnv
+    ../../home/programs/helix
 
     # Scripts
     ../../home/scripts # All scripts
@@ -44,6 +45,9 @@
       vlc
       obsidian
       appflowy
+      webtorrent_desktop
+      epr
+      zed-editor
 
       # Utils
       zip

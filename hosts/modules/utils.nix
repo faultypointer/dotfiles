@@ -41,5 +41,6 @@
     xdg-utils
     wget
     curl
+    man-pages
   ];
 }

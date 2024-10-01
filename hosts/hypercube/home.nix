@@ -78,5 +78,16 @@
     stateVersion = "24.05";
   };
 
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        savePath = "/home/faulty/Pictures/screenshots/";
+        savePathFixed = true;
+        uiColor = "#" + config.var.theme.colors.accent;
+      };
+    };
+  };
+
   programs.home-manager.enable = true;
 }

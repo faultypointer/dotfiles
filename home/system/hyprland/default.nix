@@ -57,7 +57,7 @@
 
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+        "$mod, N, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
         "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
         "$mod, W, exec, firefox" # Qutebrowser
         "$mod, O, exec, obsidian" # Qutebrowser
@@ -65,6 +65,7 @@
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, SPACE, exec, menu" # Launcher
+        "$mod, E, exec, zeditor" # zed
         # "$shiftMod, SPACE, hyprexpo:expo, toggle" # HyprExpo
 
         "$mod, Q, killactive," # Close window
@@ -80,7 +81,7 @@
         "$mod, PRINT, exec, pishot display" # Screenshot window
         ", PRINT, exec, pishot region" # Screenshot region
         "$ALT, PRINT, exec, pishot window" # Screenshot region
-        "$mod, S, exec, pishot region"
+        "$mod, S, exec, flameshot gui"
 
         "$shiftMod, S, exec, ${pkgs.qutebrowser}/bin/qutebrowser :open $(wofi --show dmenu -L 1 -p ' Search on internet')" # Search on internet with wofi
         "$shiftMod, C, exec, clipboard" # Clipboard picker with wofi

@@ -16,6 +16,7 @@
     ../../home/programs/firefox
     ../../home/programs/direnv
     ../../home/programs/helix
+    # ../../home/programs/emacs
 
     # Scripts
     ../../home/scripts # All scripts
@@ -78,16 +79,16 @@
     stateVersion = "24.05";
   };
 
-  services.flameshot = {
-    enable = true;
-    settings = {
-      General = {
-        savePath = "/home/faulty/Pictures/screenshots/";
-        savePathFixed = true;
-        uiColor = "#" + config.var.theme.colors.accent;
-      };
-    };
-  };
+  # services.flameshot = {
+  #   enable = true;
+  #   settings = {
+  #     General = {
+  #       savePath = "/home/faulty/Pictures/screenshots/";
+  #       savePathFixed = true;
+  #       uiColor = "#" + config.var.theme.colors.accent;
+  #     };
+  #   };
+  # };
 
   programs.home-manager.enable = true;
 }

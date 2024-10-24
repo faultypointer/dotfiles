@@ -7,6 +7,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nur.url = "github:nix-community/NUR";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +39,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }: {
+  outputs = inputs@{ nixpkgs, nur, ... }: {
     nixosConfigurations = {
       hypercube = nixpkgs.lib.nixosSystem { # CHANGEME
         system = "x86_64-linux";
@@ -47,6 +48,7 @@
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
             _module.args = { inherit inputs; };
           }
+          # nur.nixosModules.nur
           inputs.nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.home-manager
           {

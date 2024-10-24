@@ -53,7 +53,7 @@
       neorg =
         "cd ~/nextcloud/neorg && vim -c ':ZenMode' -c ':Telescope find_files' index.norg";
       notes =
-        "cd ~/nextcloud/Notes && vim -c ':ZenMode' -c ':Telescope find_files' index.md";
+        "cd ~/Documents/Notes/Obsidian/SegFault && vim -c ':ZenMode' -c ':Telescope find_files' index.md";
       note = "notes";
 
       # git

@@ -150,8 +150,8 @@
           "menus.dashboard.shortcuts.right.shortcut1.command": "hyprpicker -a",
           "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Color Picker",
           "menus.dashboard.shortcuts.right.shortcut3.icon": "󰄀",
-          "menus.dashboard.shortcuts.right.shortcut3.command": "screenshot region swappy",
-          "menus.dashboard.shortcuts.right.shortcut3.tooltip": "Screenshot",
+          "menus.dashboard.shortcuts.right.shortcut3.command": "screenshootin",
+          "menus.dashboard.shortcuts.right.shortcut3.tooltip": "screenshootin",
 
           "menus.dashboard.directories.left.directory1.label": "󰉍 Downloads",
           "menus.dashboard.directories.left.directory1.command": "bash -c \"thunar $HOME/Downloads/\"",

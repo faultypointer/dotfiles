@@ -731,6 +731,20 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1727844433,
+        "narHash": "sha256-Y9X6T8eM2Ao+sVghQn6y0LiaJpY2F35nsl0zB1VDJbM=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "0b52e9bfa61514321f61b5e3992c9b14aaffcf00",
+        "type": "github"
+      },
+      "original": {
+        "id": "nur",
+        "type": "indirect"
+      }
+    },
     "nuschtosSearch": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -793,6 +807,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
         "nixvim": "nixvim",
+        "nur": "nur",
         "plugin-markdown": "plugin-markdown",
         "spicetify-nix": "spicetify-nix"
       }

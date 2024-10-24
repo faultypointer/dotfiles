@@ -13,11 +13,10 @@
         svelte.enable = true;
         marksman.enable = true;
         rust-analyzer.enable = true;
+        ols.enable = true;
         zls = {
           enable = true;
-          settings = {
-            warn_style = true;
-          };
+          settings = { warn_style = true; };
         };
         ltex = {
           enable = false;

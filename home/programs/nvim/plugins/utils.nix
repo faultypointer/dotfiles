@@ -4,7 +4,6 @@
       FloatBorder.fg = "#${config.var.theme.colors.accent}";
     };
     plugins = {
-      copilot-vim.enable = true;
       flash.enable = true;
       # image.enable = true;
       tmux-navigator.enable = true;

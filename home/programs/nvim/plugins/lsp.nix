@@ -17,6 +17,7 @@
         c3_lsp = {
           enable = true;
           package = null;
+          filetypes = ["c3" "c3i"];
         };
         zls = {
           enable = true;

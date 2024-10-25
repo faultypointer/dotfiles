@@ -10,7 +10,7 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/spicetify
+    # ../../home/programs/spicetify
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/firefox

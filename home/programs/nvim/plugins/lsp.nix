@@ -14,6 +14,10 @@
         marksman.enable = true;
         rust-analyzer.enable = true;
         ols.enable = true;
+        c3_lsp = {
+          enable = true;
+          package = null;
+        };
         zls = {
           enable = true;
           settings = { warn_style = true; };

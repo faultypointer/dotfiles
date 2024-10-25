@@ -17,8 +17,8 @@
     wlr-randr
     wl-clipboard
     brightnessctl
-    gnome-themes-extra
-    qt5ct
+    # gnome-themes-extra
+    libsForQt5.qt5ct
     libva
     dconf
     wayland-utils

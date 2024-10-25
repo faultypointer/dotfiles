@@ -17,7 +17,7 @@
     wlr-randr
     wl-clipboard
     brightnessctl
-    # gnome-themes-extra
+    gnome-themes-extra
     libsForQt5.qt5ct
     libva
     dconf

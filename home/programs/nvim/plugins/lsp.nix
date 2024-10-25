@@ -14,11 +14,12 @@
         marksman.enable = true;
         rust-analyzer.enable = true;
         ols.enable = true;
-        c3_lsp = {
-          enable = true;
-          package = null;
-          filetypes = ["c3" "c3i"];
-        };
+        # c3_lsp = {
+        #   enable = true;
+        #   package = null;
+        #   filetypes = [ "c3" "c3i" ];
+        #   rootDir = "fname";
+        # };
         zls = {
           enable = true;
           settings = { warn_style = true; };

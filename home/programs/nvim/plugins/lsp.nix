@@ -1,4 +1,5 @@
-{
+{ pkgs, ... }: {
+  home.packages = [ pkgs.c3-lsp ];
   programs.nixvim.plugins = {
     lsp-format.enable = true;
     lsp = {
@@ -18,7 +19,7 @@
         #   enable = true;
         #   package = null;
         #   filetypes = [ "c3" "c3i" ];
-        #   rootDir = "fname";
+        #   cmd = [ "c3-lsp" ];
         # };
         zls = {
           enable = true;

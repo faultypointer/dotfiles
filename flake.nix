@@ -16,10 +16,7 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -39,10 +36,14 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nur, ... }: {
+  outputs = inputs@{ nixpkgs, nur, ... }:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
+  in
+  {
     nixosConfigurations = {
       hypercube = nixpkgs.lib.nixosSystem { # CHANGEME
-        system = "x86_64-linux";
         modules = [
           {
             nixpkgs.overlays = [ inputs.hyprpanel.overlay ];

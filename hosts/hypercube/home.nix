@@ -5,7 +5,6 @@
 
     # Programs
     ../../home/programs/kitty
-    ../../home/programs/qutebrowser
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
@@ -13,7 +12,6 @@
     ../../home/programs/cava
     ../../home/programs/firefox
     ../../home/programs/direnv
-    ../../home/programs/helix
 
     # Scripts
     ../../home/scripts # All scripts

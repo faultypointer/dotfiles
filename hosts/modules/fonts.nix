@@ -21,8 +21,6 @@
       noto-fonts-emoji
       jetbrains-mono
       (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; })
-      inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
-      inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
       openmoji-color
     ];
 

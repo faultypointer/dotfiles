@@ -5,18 +5,15 @@
 
     # Programs
     ../../home/programs/kitty
-    ../../home/programs/nvim
     ../../home/programs/qutebrowser
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    # ../../home/programs/spicetify
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/firefox
     ../../home/programs/direnv
     ../../home/programs/helix
-    # ../../home/programs/emacs
 
     # Scripts
     ../../home/scripts # All scripts
@@ -49,6 +46,7 @@
       webtorrent_desktop
       epr
       zed-editor
+      neovim
 
       # Utils
       zip
@@ -64,6 +62,8 @@
       cbonsai
       pipes
       cmatrix
+
+      nixd
     ];
 
     # Import wallpapers into $HOME/wallpapers

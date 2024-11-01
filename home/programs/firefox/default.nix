@@ -40,14 +40,11 @@
 		extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 			ublock-origin
 			bitwarden
-			vimium
 			duckduckgo-privacy-essentials
 			sidebery
 			sponsorblock
 			i-dont-care-about-cookies
 			adaptive-tab-bar-colour
-			(youtube-recommended-videos.overrideAttrs(o:{meta=o.meta//{license=lib.licenses.mit;};}))
-			(languagetool.overrideAttrs(o:{meta=o.meta//{license=lib.licenses.mit;};}))
 		];
 
 		# http://kb.mozillazine.org/Category:Preferences

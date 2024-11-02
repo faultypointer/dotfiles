@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, config, ... }: {
 
   imports = [
     ./variables.nix
@@ -9,7 +9,6 @@
     ../../home/programs/fetch
     ../../home/programs/git
     ../../home/programs/btop
-    ../../home/programs/cava
     ../../home/programs/firefox
     ../../home/programs/direnv
 

@@ -11,6 +11,7 @@
     ../../home/programs/btop
     ../../home/programs/firefox
     ../../home/programs/direnv
+    ../../home/programs/helix
 
     # Scripts
     ../../home/scripts # All scripts

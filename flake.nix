@@ -36,7 +36,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nur, ... }:
+  outputs = inputs@{ nixpkgs, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };

@@ -1,8 +1,17 @@
-{inputs, ...}:
-{
-    imports = [
+{ inputs, ... }: {
+  imports = [
     inputs.nixvim.homeManagerModules.nixvim
-        ./nvim.nix
-        ./colorscheme.nix
-    ];
+    ./plugins/cmp.nix
+    ./plugins/dashboard.nix
+    ./plugins/lsp.nix
+    ./plugins/markdown.nix
+    ./plugins/tree.nix
+    ./plugins/ui.nix
+    ./plugins/utils.nix
+    ./plugins/zen-mode.nix
+
+    ./options.nix
+    ./colorscheme.nix
+    ./keymaps.nix
+  ];
 }

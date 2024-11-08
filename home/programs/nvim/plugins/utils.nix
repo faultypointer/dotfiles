@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.nixvim = {
     highlightOverride = {
       FloatBorder.fg = "#${config.var.theme.colors.accent}";
@@ -20,6 +20,10 @@
       };
       treesitter = {
         enable = true;
+        grammarPackages = with pkgs.tree-sitter-grammars; [
+          tree-sitter-norg
+          tree-sitter-norg-meta
+        ];
         nixGrammars = true;
         settings = {
           indent.enable = true;

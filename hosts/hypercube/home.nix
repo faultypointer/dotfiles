@@ -12,6 +12,7 @@
     ../../home/programs/firefox
     ../../home/programs/direnv
     ../../home/programs/helix
+    ../../home/programs/nvim
 
     # Scripts
     ../../home/scripts # All scripts
@@ -43,8 +44,6 @@
       appflowy
       webtorrent_desktop
       epr
-      zed-editor
-      neovim
 
       # Utils
       zip
@@ -61,7 +60,17 @@
       pipes
       cmatrix
 
+      zed-editor
       nixd
+      c3-lsp
+      rust-analyzer
+      clang-tools
+      markdown-oxide
+
+      typst
+      typstyle
+      typst-lsp
+      typst-live
     ];
 
     # Import wallpapers into $HOME/wallpapers

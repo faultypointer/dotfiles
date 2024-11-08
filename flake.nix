@@ -36,13 +36,16 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, nixvim, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in
   {
     nixosConfigurations = {
+      specialArgs = {
+        inherit inputs;
+      };
       hypercube = nixpkgs.lib.nixosSystem { # CHANGEME
         modules = [
           {

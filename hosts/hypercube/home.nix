@@ -60,6 +60,7 @@
       pipes
       cmatrix
 
+      neovide
       zed-editor
       nixd
       c3-lsp

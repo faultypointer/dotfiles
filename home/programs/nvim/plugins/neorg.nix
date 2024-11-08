@@ -1,7 +1,5 @@
-{ pkgs, ... }: {
+{
   programs.nixvim = {
-    extraPlugins = with pkgs.vimPlugins; [ vim-pencil render-markdown-nvim ];
-
     keymaps = [
       {
         action =
@@ -25,15 +23,11 @@
       }
     ];
 
-    extraConfigLua = ''
-      require('render-markdown').setup({
-      })
-    '';
-
     plugins = {
       twilight.enable = true;
+      render-markdown.enable = true;
       zen-mode.enable = true;
-      # headlines.enable = true;
+      markdown-preview.enable = true;
 
       obsidian = {
         enable = true;
@@ -44,7 +38,7 @@
             path = "~/Documents/Notes";
           }];
           dailyNotes = {
-            folder = "journal/dailies";
+            folder = "Journal";
             dateFormat = "%Y-%m-%d";
             aliasFormat = "%B %-d, %Y";
             #template = "daily.md";

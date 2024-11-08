@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.nixvim = {
     highlightOverride = {
       FloatBorder.fg = "#${config.var.theme.colors.accent}";
@@ -21,6 +21,11 @@
       treesitter = {
         enable = true;
         nixGrammars = true;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          markdown
+          markdown-inline
+          latex
+        ];
         settings = {
           indent.enable = true;
           highlight.enable = true;

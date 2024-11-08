@@ -6,7 +6,6 @@
         src = inputs.plugin-markdown;
       })
     ];
-    extraConfigLua = "require('render-markdown').setup({})";
     plugins = {
       mkdnflow = {
         enable = true;

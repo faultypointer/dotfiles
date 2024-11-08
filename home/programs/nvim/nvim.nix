@@ -1,6 +1,7 @@
 {
     programs.nixvim = {
     	enable = true;
+        clipboard.providers.wl-copy.enable = true;
     	opts = {
     	    incsearch = true; # Incremental search: show match for partly typed search command
     	    inccommand = "split"; # Search and replace: preview changes in quickfix list

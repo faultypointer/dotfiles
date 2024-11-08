@@ -49,12 +49,6 @@
       sl = "ls";
       open = "${pkgs.xdg-utils}/bin/xdg-open";
       icat = "${pkgs.kitty}/bin/kitty +kitten icat";
-      wireguard-import = "nmcli connection import type wireguard file";
-      neorg =
-        "cd ~/nextcloud/neorg && vim -c ':ZenMode' -c ':Telescope find_files' index.norg";
-      notes =
-        "cd ~/Documents/Notes/Obsidian/SegFault && vim -c ':ZenMode' -c ':Telescope find_files' index.md";
-      note = "notes";
 
       # git
       ga = "git add";

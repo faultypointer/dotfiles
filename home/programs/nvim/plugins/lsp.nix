@@ -9,11 +9,12 @@
         clangd.enable = true;
         gopls.enable = true;
         nixd.enable = true;
+        pylsp.enable = true;
         marksman.enable = true;
         rust_analyzer = {
-            enable = true;
-            installCargo = false;
-            installRustc = false;
+          enable = true;
+          installCargo = false;
+          installRustc = false;
         };
         ols.enable = true;
         zls = {

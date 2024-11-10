@@ -50,6 +50,8 @@
       open = "${pkgs.xdg-utils}/bin/xdg-open";
       icat = "${pkgs.kitty}/bin/kitty +kitten icat";
 
+      gcc = "gcc -Wall -Wpedantic";
+
       # git
       ga = "git add";
       gc = "git commit";

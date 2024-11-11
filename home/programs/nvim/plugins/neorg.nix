@@ -37,18 +37,18 @@
             name = "Notes";
             path = "~/Documents/Notes";
           }];
-          dailyNotes = {
-            folder = "Journal";
-            dateFormat = "%Y-%m-%d";
-            aliasFormat = "%B %-d, %Y";
-            #template = "daily.md";
-          };
-          templates = {
-            subdir = "templates";
-            dateFormat = "%Y-%m-%d";
-            timeFormat = "%H:%M";
-            substitutions = { };
-          };
+          # dailyNotes = {
+          #   folder = "Journal";
+          #   dateFormat = "%Y-%m-%d";
+          #   aliasFormat = "%B %-d, %Y";
+          #   #template = "daily.md";
+          # };
+          # templates = {
+          #   subdir = "templates";
+          #   dateFormat = "%Y-%m-%d";
+          #   timeFormat = "%H:%M";
+          #   substitutions = { };
+          # };
         };
       };
     };

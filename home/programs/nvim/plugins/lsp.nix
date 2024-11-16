@@ -7,6 +7,7 @@
       servers = {
         bashls.enable = true;
         clangd.enable = true;
+        cmake.enable = true;
         gopls.enable = true;
         nixd.enable = true;
         pylsp.enable = true;

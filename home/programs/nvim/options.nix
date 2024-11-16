@@ -1,6 +1,8 @@
 {
 
   programs.nixvim.globals.mapleader = " ";
+  programs.nixvim.extraConfigVim =
+    "autocmd BufRead,BufNewFile *.h set filetype=c";
   programs.nixvim.opts = {
     updatetime = 50; # Faster completion
 

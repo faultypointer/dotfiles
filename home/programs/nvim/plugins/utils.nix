@@ -25,6 +25,7 @@
           markdown
           markdown-inline
           latex
+          c-sharp
         ];
         settings = {
           indent.enable = true;

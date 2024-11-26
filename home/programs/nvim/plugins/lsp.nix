@@ -1,5 +1,12 @@
 { pkgs, ... }: {
   home.packages = [ pkgs.c3-lsp ];
+  programs.nixvim.extraConfigLua = ''
+    require('lspconfig').csharp_ls.setup {
+     cmd = { "csharp-ls" }, -- Ensure this points to the Nix-installed binary
+     on_attach = on_attach,
+     capabilities = capabilities,
+    }
+  '';
   programs.nixvim.plugins = {
     lsp-format.enable = true;
     lsp = {

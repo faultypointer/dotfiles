@@ -36,8 +36,6 @@
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
 
-      exec-once = [ "${pkgs.bitwarden}/bin/bitwarden" ];
-
       monitor = [ "eDP-2,highres,0x0,1" ",prefered,auto,1" ];
 
       # plugin = {
@@ -61,7 +59,6 @@
         "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
         "$mod, W, exec, firefox" # Qutebrowser
         "$mod, O, exec, obsidian" # Qutebrowser
-        "$mod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, SPACE, exec, menu" # Launcher

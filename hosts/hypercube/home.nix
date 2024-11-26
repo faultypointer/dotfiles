@@ -38,7 +38,6 @@
       # Apps
       discord
       xfce.thunar
-      bitwarden
       vlc
       obsidian
       appflowy
@@ -62,7 +61,6 @@
 
       neovide
       zed-editor
-      vscodium-fhs
       nixd
       c3-lsp
       rust-analyzer

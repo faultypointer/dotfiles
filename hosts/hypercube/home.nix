@@ -62,6 +62,7 @@
 
       neovide
       zed-editor
+      vscodium-fhs
       nixd
       c3-lsp
       rust-analyzer

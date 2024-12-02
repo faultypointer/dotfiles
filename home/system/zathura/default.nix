@@ -10,5 +10,9 @@
       render-loading = false;
       scroll-step = 120;
     };
+
+    extraConfig = ''
+        set selection-clipboard clipboard
+    '';
   };
 }

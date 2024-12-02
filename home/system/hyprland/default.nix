@@ -63,6 +63,7 @@
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, SPACE, exec, menu" # Launcher
         "$mod, E, exec, zeditor" # zed
+        "$mod, Z, exec, zathura" 
         # "$shiftMod, SPACE, hyprexpo:expo, toggle" # HyprExpo
 
         "$mod, Q, killactive," # Close window

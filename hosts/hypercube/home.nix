@@ -11,7 +11,6 @@
     ../../home/programs/btop
     ../../home/programs/firefox
     ../../home/programs/direnv
-    ../../home/programs/helix
     ../../home/programs/nvim
 
     # Scripts
@@ -39,8 +38,6 @@
       discord
       xfce.thunar
       vlc
-      obsidian
-      appflowy
       webtorrent_desktop
       epr
 

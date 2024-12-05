@@ -64,10 +64,12 @@
       clang-tools
       markdown-oxide
 
-      typst
-      typstyle
-      typst-lsp
-      typst-live
+      # typst
+      # typstyle
+      # typst-lsp
+      # typst-live
+
+      dbgate 
     ];
 
     # Import wallpapers into $HOME/wallpapers

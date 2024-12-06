@@ -6,11 +6,11 @@
         lua_ls.enable = true;
         nixd.enable = true;
         ccls.enable = true;
-        ltex.enable = true;
+        # ltex.enable = true;
         rust_analyzer = {
           enable = true;
-          installCargo = true;
-          installRustc = true;
+          installCargo = false;
+          installRustc = false;
         };
         pylsp = {
           enable = true;

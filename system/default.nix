@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, variables, ... }:
+{ config, pkgs, variables, inputs, ... }:
 
 {
   imports =
@@ -120,6 +120,9 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     wl-clipboard
+
+    # move this when moving plasma setting to its own file
+    inputs.kwin-effects-forceblur.packages.${system}.default
   ];
 
   services.keyd = {

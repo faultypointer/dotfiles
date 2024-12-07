@@ -1,15 +1,16 @@
 { pkgs, ... }:
 {
-  imports = [ ./scripts ];
+  imports = [ 
+    ./scripts
+    ./starship.nix
+  ];
 
   home.packages = with pkgs; [
     trash-cli
-      eza
+    eza
+    bat
   ];
 
-  programs.starship = {
-    enable = true;
-  };
 
   programs.zsh = {
     enable = true;

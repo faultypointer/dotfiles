@@ -1,7 +1,13 @@
-{
+{ pkgs, ... }: {
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
+
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        markdown
+        markdown-inline
+        latex
+      ];
 
       nixvimInjections = true;
 
@@ -14,9 +20,7 @@
 
     treesitter-refactor = {
       enable = true;
-      highlightDefinitions = {
-        enable = true;
-      };
+      highlightDefinitions = { enable = true; };
     };
 
     lastplace.enable = true;

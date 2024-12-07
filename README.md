@@ -1,4 +1,4 @@
-## einstein.nixos
+# faulty's config
 
 ```
 
@@ -44,3 +44,25 @@
 ```
 
 This is my current nixos configuration using plasma(not configured with nix) and nixvim .
+
+## Todos
+
+### Nixvim / Neovide
+
+- [x] Get Neovide to start in some other default directory
+- [ ] Nixvim Markdown Preview
+- [x] Remove the "Enter to continue after :w"
+  - Removed with noice.nvim ui
+  - which still needs some dependencies to function properly
+  - [ ] two notifications there are
+  - but works
+
+### Panel / Dock
+
+- [ ] Better Panel
+- [ ] Better Application Launcher
+- [ ] Transparent Panel
+
+### Terminal
+
+- [x] Starship minimal

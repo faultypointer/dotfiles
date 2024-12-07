@@ -123,6 +123,7 @@
 
     # move this when moving plasma setting to its own file
     inputs.kwin-effects-forceblur.packages.${system}.default
+    blueman
   ];
 
   services.keyd = {
@@ -136,6 +137,16 @@
       };
     };
   };
+
+
+  # bluetooth
+  # environment.systemPackages = with pkgs; [ blueman ];
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }

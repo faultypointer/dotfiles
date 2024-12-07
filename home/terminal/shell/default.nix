@@ -1,16 +1,7 @@
-{ pkgs, ... }:
-{
-  imports = [ 
-    ./scripts
-    ./starship.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./scripts ./starship.nix ];
 
-  home.packages = with pkgs; [
-    trash-cli
-    eza
-    bat
-  ];
-
+  home.packages = with pkgs; [ trash-cli eza bat ];
 
   programs.zsh = {
     enable = true;
@@ -36,11 +27,8 @@
       vim = "nvim";
       nivm = "nvim";
       vnim = "nvim";
-      neovim = "XDG_CONFIG_HOME=/home/scientiac/Einstein/home/terminal/neovim/ nvim";
     };
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
+    sessionVariables = { EDITOR = "nvim"; };
   };
 }

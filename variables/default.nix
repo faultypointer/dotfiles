@@ -1,9 +1,12 @@
-{ inputs, ... }:
+{ inputs,  ... }:
 {
   username = "faulty";
   hostname = "hypercube";
 
   fontname = "FantasqueSansM Nerd Font";
+
+  # homeDirectory = "/home/" + variables.username;
+  # configDirectory = variables.homeDirectory + "/git/dotfiles";
 
   colors = {
     c0 = "1e1e2e"; # black

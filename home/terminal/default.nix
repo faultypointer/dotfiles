@@ -6,6 +6,7 @@
     ./git
     ./lazygit
     ./neovim
+    # ./nvim
     ./ssh
     ./tmux
   ];

@@ -382,6 +382,22 @@
         "type": "github"
       }
     },
+    "plugin-markdown": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733544323,
+        "narHash": "sha256-UtNJ0hAKRXXP7c7l4iq7mteXm3dFa/Iw4LJ9QLEv8uk=",
+        "owner": "MeanderingProgrammer",
+        "repo": "markdown.nvim",
+        "rev": "c89e5e0719d07e1e2c0d3942b564ac916b6ffe9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MeanderingProgrammer",
+        "repo": "markdown.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "auto-cpufreq": "auto-cpufreq",
@@ -390,7 +406,8 @@
         "kwin-effects-forceblur": "kwin-effects-forceblur",
         "minimal-tmux": "minimal-tmux",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "plugin-markdown": "plugin-markdown"
       }
     },
     "systems": {

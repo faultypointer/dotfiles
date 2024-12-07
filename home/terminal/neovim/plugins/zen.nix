@@ -1,5 +1,7 @@
 {
   programs.nixvim.plugins = {
+    twilight.enable = true;
+    markdown-preview.enable = true;
     zen-mode = {
       enable = true;
       settings = {
@@ -19,15 +21,11 @@
         '';
         window = {
           height = 1;
-          options = {
-            signcolumn = "no";
-          };
+          options = { signcolumn = "no"; };
           width = 0.75;
         };
         plugins = {
-          twilight = {
-            enabled = true;
-          };
+          twilight = { enabled = true; };
           kitty = {
             enabled = true;
             font = "+2";

@@ -7,5 +7,6 @@
     ./lsp.nix
     ./treesitter.nix
     ./terminal.nix
+    ./ui.nix
   ];
 }

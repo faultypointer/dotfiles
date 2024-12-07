@@ -4,7 +4,8 @@
   home.packages = (with pkgs; [
     # valent
     kdePackages.tokodon
-    # nheko
+    halloy
+    # cinny-desktop
     webtorrent_desktop
   ]);
 

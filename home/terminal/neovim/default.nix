@@ -4,13 +4,7 @@
     ./neovim.nix
     ./keymaps.nix
     ./plugins
+    ./neovide.nix
   ];
 
-  home.packages = with pkgs; [
-      neovide
-  ];
-
-  home.file."./.config/neovide/config.toml" = {
-    source = ./neovide/config.toml;
-  };
 }

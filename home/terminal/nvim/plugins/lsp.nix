@@ -17,6 +17,7 @@
         cmake.enable = true;
         gopls.enable = true;
         nixd.enable = true;
+        lua_ls.enable = true;
         pylsp.enable = true;
         marksman.enable = true;
         rust_analyzer = {

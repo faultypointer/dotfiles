@@ -1,13 +1,9 @@
-{pkgs, ...}:
-{
-  home.packages = with pkgs; [
-      neovide
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ neovide ];
 
   home.file."./.config/neovide/config.toml" = {
     source = ./neovide/config.toml;
   };
-
 
   programs.nixvim.extraConfigLua = ''
     if vim.g.neovide then

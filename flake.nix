@@ -4,7 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # niri.url = "github:sodiboo/niri-flake";
+    # nixpkgs.follows = "nixos-cosmic/nixpkgs";
+    # nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
     kwin-effects-forceblur = {
       url = "github:taj-ny/kwin-effects-forceblur";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,20 +43,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  let
-     variables = import ./variables { inherit inputs;};
-  in
-  {
-    nixosConfigurations.${variables.hostname} = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs variables; };
-      modules = [
-      	home-manager.nixosModules.home-manager
+  outputs = { self, nixpkgs, home-manager, nixos-cosmic, ... }@inputs:
+    let variables = import ./variables { inherit inputs; };
+    in {
+      nixosConfigurations.${variables.hostname} = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs variables; };
+        modules = [
+          {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [
+                "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+              ];
+            };
+          }
+          nixos-cosmic.nixosModules.default
+          home-manager.nixosModules.home-manager
 
-        ./system
-      	./home
-      ];
+          ./system
+          ./home
+        ];
+      };
     };
-  };
 }

@@ -5,40 +5,39 @@
 { config, pkgs, variables, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
+  boot = {
+    plymouth = {
+      enable = true;
+      theme = "bgrt";
+    };
+
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    kernelParams = [
+      "quiet"
+      "splash"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "boot.shell_on_fail"
+      "nmi_watchdog=0"
+      # "amdgpu.dcdebugmask=0x10"
     ];
 
-    boot = {
-      plymouth = {
-        enable = true;
-        theme = "bgrt";
-      };
-
-      consoleLogLevel = 0;
-      initrd.verbose = false;
-
-      kernelPackages = pkgs.linuxPackages_zen;
-
-      kernelParams = [
-        "quiet"
-        "splash"
-        "rd.systemd.show_status=false"
-        "rd.udev.log_level=3"
-        "udev.log_priority=3"
-        "boot.shell_on_fail"
-        "nmi_watchdog=0"
-        # "amdgpu.dcdebugmask=0x10"
-      ];
-
-      loader = {
-        systemd-boot.consoleMode = "auto";
-        efi.canTouchEfiVariables = true;
-        systemd-boot.enable = true;
-        systemd-boot.editor = false;
-      };
+    loader = {
+      systemd-boot.consoleMode = "auto";
+      efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      systemd-boot.editor = false;
     };
+  };
 
   networking.hostName = "hypercube"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -49,7 +48,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Set your time zone
   time.timeZone = "Asia/Kathmandu";
 
@@ -63,6 +62,9 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -130,14 +132,9 @@
     enable = true;
     keyboards.default = {
       ids = [ "*" ];
-      settings = {
-        main = {
-          capslock = "esc";
-        };
-      };
+      settings = { main = { capslock = "esc"; }; };
     };
   };
-
 
   # bluetooth
   # environment.systemPackages = with pkgs; [ blueman ];
@@ -146,7 +143,7 @@
     powerOnBoot = true;
   };
 
-  services.blueman.enable = true;
+  # services.blueman.enable = true;
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }

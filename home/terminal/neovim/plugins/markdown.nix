@@ -23,13 +23,13 @@
           MkdnDestroyLink = false;
           MkdnFollowLink = false;
           MkdnNextLink = {
-            key = "<Tab>";
-            modes = "n";
-          };
-          MkdnPrevLink = {
             key = "<S-Tab>";
             modes = "n";
           };
+          # MkdnPrevLink = {
+          #   key = "<S-Tab>";
+          #   modes = "n";
+          # };
           MkdnYankAnchorLink = false;
           MkdnYankFileAnchorLink = false;
           MkdnDecreaseHeading = {

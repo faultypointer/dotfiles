@@ -11,5 +11,7 @@
       signal-desktop
       vesktop
       telegram-desktop
+
+      zed-editor
   ];
 }

@@ -12,6 +12,7 @@
     lsp = {
       enable = true;
       servers = {
+        html.enable = true;
         bashls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
@@ -54,6 +55,7 @@
           tidy.enable = true;
           shellharden.enable = true;
           shfmt.enable = true;
+          html.enable = false;
         };
       };
     };

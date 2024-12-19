@@ -1,5 +1,6 @@
 {
   imports = [
+    ./latex.nix
     ./mini.nix
     ./zen.nix
     ./markdown.nix

@@ -9,10 +9,14 @@
   '';
   programs.nixvim.plugins = {
     direnv.enable = true;
-    lsp-format.enable = true;
+    lsp-format = {
+      enable = true;
+      lspServersToEnable = [ "nixd" "rust_analyzer" "pylsp" "ccls" ];
+    };
     lsp = {
       enable = true;
       servers = {
+        html.enable = true;
         bashls.enable = true;
         clangd.enable = true;
         cmake.enable = true;
@@ -40,7 +44,7 @@
       };
     };
     none-ls = {
-      enable = true;
+      enable = false;
       sources = {
         diagnostics = {
           golangci_lint.enable = true;

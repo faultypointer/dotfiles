@@ -14,7 +14,7 @@
               action = "closeopen";
               pair = "<>";
               neigh_pattern = "[^\\].";
-              register = {cr = false;};
+              register = { cr = false; };
             };
           };
         };
@@ -30,7 +30,7 @@
           };
         };
 
-        pick = {options = {use_cache = true;};};
+        pick = { options = { use_cache = true; }; };
         move = {
           mappings = {
             left = "<S-h>";
@@ -44,8 +44,8 @@
           };
         };
 
-        indentscope = {symbol = "┋";};
-        ai = {};
+        indentscope = { symbol = "┋"; };
+        ai = { };
 
         clue = {
           triggers = [
@@ -87,11 +87,11 @@
             }
             {
               mode = "n";
-              keys = "\"";
+              keys = ''"'';
             }
             {
               mode = "x";
-              keys = "\"";
+              keys = ''"'';
             }
             {
               mode = "i";
@@ -116,13 +116,9 @@
           ];
         };
 
-        notify = {
-          window = {
-            winblend = 0;
-          };
-        };
+        notify = { window = { winblend = 0; }; };
 
-        git = {};
+        git = { };
 
         diff = {
           view = {
@@ -137,19 +133,8 @@
 
         starter = {
           evaluate_single = false;
-          header = ''
-          ⠀⠀⢀⣤⣤⣤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-          ⠀⠀⢸⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀
-          ⠀⠀⠘⠉⠉⠙⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀
-          ⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⠀⠀⠀⠀⠀ 
-          ⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀
-          ⠀⠀⠀⠀⣴⣿⣿⣿⠟⣿⣿⣿⣷⠀⠀⠀⠀
-          ⠀⠀⠀⣰⣿⣿⣿⡏⠀⠸⣿⣿⣿⣇⠀⠀⠀
-          ⠀⠀⢠⣿⣿⣿⡟⠀⠀⠀⢻⣿⣿⣿⡆⠀⠀
-          ⠀⢠⣿⣿⣿⡿⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⡄
-          ⢀⣾⣿⣿⣿⠁⠀⠀⠀⠀⠀⠈⠿⣿⣿⣿⡇
-          '';
-          items = [];
+          header = "";
+          items = [ ];
           footer = "";
         };
 
@@ -162,7 +147,7 @@
           };
         };
 
-        operators = {};
+        operators = { };
       };
     };
   };

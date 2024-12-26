@@ -5,6 +5,7 @@
       ./thunderbird
       ./kitty
       ./sioyek
+      ./zed
   ];
 
   home.packages = with pkgs; [
@@ -12,6 +13,8 @@
       vesktop
       telegram-desktop
 
-      zed-editor
+      eslint
+      vtsls
+      tailwindcss-language-server
   ];
 }

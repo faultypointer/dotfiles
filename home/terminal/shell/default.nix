@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [ ./scripts ./starship.nix ];
 
-  home.packages = with pkgs; [ trash-cli eza bat ];
+  home.packages = with pkgs; [ trash-cli eza bat btop ];
 
   programs.zsh = {
     enable = true;

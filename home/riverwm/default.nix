@@ -1,1 +1,1 @@
-{ imports = [ ./riverwm.nix ./map.nix ./input.nix ]; }
+{ imports = [ ./riverwm.nix ./map.nix ./input.nix ./launcher.nix ]; }

@@ -11,7 +11,7 @@
     imports = [
       ./graphical
       ./terminal
-      # ./niriwm
+      ./riverwm
     ];
 
     home.stateVersion = "24.11";

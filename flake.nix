@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # nixpkgs.follows = "nixos-cosmic/nixpkgs";
-    # nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-
     kwin-effects-forceblur = {
       url = "github:taj-ny/kwin-effects-forceblur";
       inputs.nixpkgs.follows = "nixpkgs";

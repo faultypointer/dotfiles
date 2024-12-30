@@ -12,6 +12,7 @@
         "$mod, F, fullscreen"
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
         "$mod, W, exec, flatpak run io.github.zen_browser.zen"
+        "$mod, D, exec, flatpak run io.github.equicord.equibop"
         "$mod, S, exec, grimblast copy area"
         "$mod, E, exec, zeditor"
       ]

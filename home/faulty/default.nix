@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   imports = [
     ../programs/desktop/hyprland
@@ -11,8 +11,14 @@
   home.homeDirectory = "/home/faulty";
 
   home.packages = with pkgs; [
-   fastfetch 
-   nerd-fonts.fantasque-sans-mono
+    fastfetch
+    nerd-fonts.fantasque-sans-mono
+
+    lazygit
+    zed-editor
+    nixd
+    nil
+    nixfmt-rfc-style
   ];
 
   home.stateVersion = "24.11";

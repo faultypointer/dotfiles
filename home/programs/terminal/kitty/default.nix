@@ -1,6 +1,7 @@
 {
   programs.kitty = {
     enable = true;
+    shellIntegration.enableZshIntegration = true;
     settings = {
       foreground = "#ebdbb2";
       background = "#272727";

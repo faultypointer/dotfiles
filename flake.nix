@@ -16,33 +16,30 @@
       url = "github:MeanderingProgrammer/markdown.nvim";
       flake = false;
     };
+    minimal-tmux = {
+      url = "github:niksingh710/minimal-tmux-status";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        hypercube = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hypercube
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    nixosConfigurations = {
+      hypercube = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hypercube
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "HMbackup";
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.faulty = import ./home/faulty;
-            }
-          ];
-        };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.backupFileExtension = "HMbackup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.faulty = import ./home/faulty;
+          }
+        ];
       };
     };
+  };
 }

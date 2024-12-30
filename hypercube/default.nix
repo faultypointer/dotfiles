@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
+  imports = [
+    ./hardware-configuration.nix
 
-      ./desktop/hyprland.nix
-    ];
+    ./desktop/hyprland.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -13,13 +12,17 @@
   networking.hostName = "hypercube";
   networking.networkmanager.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   time.timeZone = "Asia/Kathmandu";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.flatpak.enable = true;
+  programs.nix-ld.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -29,15 +32,17 @@
   users.users.faulty = {
     isNormalUser = true;
     description = "faulty pointer";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-   neovim 
-   git
+    neovim
+    git
   ];
 
   system.stateVersion = "24.11";

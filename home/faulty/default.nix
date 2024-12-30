@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [
     ../programs/desktop/hyprland
-
-    ./git.nix
+    ../programs/terminal/neovim
+    ../programs/terminal/shell
 
     ../scripts
   ];
@@ -14,8 +13,9 @@
     fastfetch
     nerd-fonts.fantasque-sans-mono
 
-    lazygit
+    sioyek
     zed-editor
+    rust-analyzer
     nixd
     nil
     nixfmt-rfc-style

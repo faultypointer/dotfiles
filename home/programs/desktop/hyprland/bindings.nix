@@ -15,6 +15,7 @@
         "$mod, D, exec, flatpak run io.github.equicord.equibop"
         "$mod, S, exec, grimblast copy area"
         "$mod, E, exec, zeditor"
+        "$mod, R, exec, sioyek"
       ]
       ++ (builtins.concatLists (
         builtins.genList (

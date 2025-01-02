@@ -1,12 +1,14 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ wl-clipboard grimblast firefox ];
+  home.packages = with pkgs; [ wl-clipboard grimblast ];
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind = [
       "$mod, Q, killactive"
       "$mod, F, fullscreen"
       "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-      "$mod, W, exec, flatpak run io.github.zen_browser.zen"
+      "$mod SHIFT, W, exec, flatpak run io.github.zen_browser.zen"
+      "$mod, W, exec, firefox"
+      "$mod, M, exec, spotify"
       "$mod, D, exec, flatpak run io.github.equicord.equibop"
       "$mod, S, exec, grimblast copy area"
       "$mod, E, exec, zeditor"

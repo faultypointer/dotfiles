@@ -5,9 +5,7 @@
       laststatus = 3;
       clipboard = "unnamedplus";
       termguicolors = true;
-      fillchars = {
-        eob = " ";
-      };
+      fillchars = { eob = " "; };
       shortmess = "tToOCFa";
       cursorline = true;
       cursorlineopt = "number";
@@ -19,11 +17,7 @@
       swapfile = false;
       undofile = true;
       cmdheight = 0;
-      completeopt = [
-        "menuone"
-        "noselect"
-        "noinsert"
-      ];
+      completeopt = [ "menuone" "noselect" "noinsert" ];
       wildmenu = true;
       pumheight = 10;
       ignorecase = true;
@@ -48,21 +42,13 @@
       statusline = "%#Normal#%=";
     };
 
-    clipboard.register = "unnamedplus";
-
-    globals = {
-      mapleader = " ";
-    };
+    globals = { mapleader = " "; };
 
     colorschemes.gruvbox = {
       enable = true;
-      settings = {
-        transparent_mode = true;
-      };
+      settings = { transparent_mode = true; };
     };
 
-    highlight = {
-      Normal.bg = "#000000";
-    };
+    highlight = { Normal.bg = "#000000"; };
   };
 }

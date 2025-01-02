@@ -1,34 +1,22 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [
-    grimblast
-    firefox
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ wl-clipboard grimblast firefox ];
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    bind =
-      [
-        "$mod, Q, killactive"
-        "$mod, F, fullscreen"
-        "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
-        "$mod, W, exec, flatpak run io.github.zen_browser.zen"
-        "$mod, D, exec, flatpak run io.github.equicord.equibop"
-        "$mod, S, exec, grimblast copy area"
-        "$mod, E, exec, zeditor"
-        "$mod, R, exec, sioyek"
-      ]
-      ++ (builtins.concatLists (
-        builtins.genList (
-          i:
-          let
-            ws = i + 1;
-          in
-          [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ]
-        ) 9
-      ));
+    bind = [
+      "$mod, Q, killactive"
+      "$mod, F, fullscreen"
+      "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"
+      "$mod, W, exec, flatpak run io.github.zen_browser.zen"
+      "$mod, D, exec, flatpak run io.github.equicord.equibop"
+      "$mod, S, exec, grimblast copy area"
+      "$mod, E, exec, zeditor"
+      "$mod, R, exec, sioyek"
+    ] ++ (builtins.concatLists (builtins.genList (i:
+      let ws = i + 1;
+      in [
+        "$mod, code:1${toString i}, workspace, ${toString ws}"
+        "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+      ]) 9));
 
     bindl = [
       ",XF86AudioMute, exec, sound-toggle" # Toggle Mute

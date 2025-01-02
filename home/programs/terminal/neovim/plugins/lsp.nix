@@ -1,5 +1,5 @@
 {
-programs.nixvim.plugins = {
+  programs.nixvim.plugins = {
     lsp-format.enable = true;
     lsp = {
       enable = true;
@@ -52,4 +52,3 @@ programs.nixvim.plugins = {
     };
   };
 }
-

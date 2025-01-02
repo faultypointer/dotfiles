@@ -10,6 +10,7 @@
   home.homeDirectory = "/home/faulty";
 
   home.packages = with pkgs; [
+    bat
     fastfetch
     nerd-fonts.fantasque-sans-mono
 

@@ -18,6 +18,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.flatpak.enable = true;
+  programs.nix-ld.enable = true;
   programs.zsh.enable = true;
 
   services.xserver.xkb = {

@@ -1,6 +1,7 @@
 {
   imports = [
     ./bindings.nix
+    ./hyprpaper.nix
     # ./clipman.nix
 
     # other programs

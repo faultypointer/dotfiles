@@ -13,12 +13,14 @@
         pylsp.enable = true;
         marksman.enable = true;
         ts_ls.enable = true;
+        denols.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;
         };
         ols.enable = true;
+        sqls.enable = true;
         zls = {
           enable = true;
           settings = { warn_style = true; };

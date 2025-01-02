@@ -1,7 +1,7 @@
 {
   imports = [
     ./bindings.nix
-    ./clipman.nix
+    # ./clipman.nix
 
     # other programs
     ../../terminal/kitty

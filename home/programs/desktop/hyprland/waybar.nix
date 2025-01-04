@@ -132,36 +132,36 @@
         };
 
         tray = {
-          icon-size = 14;
+          icon-size = 10;
           spacing = 10;
         };
       };
     };
     style = ''
       * {
-          font-size:15px;
+          font-size:11px;
           font-family: "${variables.font.name}";
       }
       window#waybar{
           all:unset;
       }
       .modules-left {
-          padding:7px;
-          margin:5px;
+          padding:3px;
+          margin:2px;
           border-radius:10px;
           background: rgba(50,50,50,.5);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
       }
       .modules-center {
-          padding:7px;
-          margin:5px;
+          padding:3px;
+          margin:2px;
           border-radius:10px;
           background: rgba(50,50,50,.5);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
       }
       .modules-right {
-          padding:7px;
-          margin:5px;
+          padding:3px;
+          margin:2px;
           border-radius:10px;
           background: rgba(50,50,50,.5);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
@@ -174,23 +174,23 @@
           color:rgba(150,150,150,.5);
       }
       #custom-notification {
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
       }
       #clock{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
       }
       #custom-pacman{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
       }
       #workspaces {
-          padding: 0px 5px;
+          padding: 0px 2px;
       }
       #workspaces button {
           all:unset;
-          padding: 0px 5px;
+          padding: 0px 2px;
           color: transparent;
           transition: all .5s ease;
           text-shadow: 0px 0px 1px rgba(0, 0, 0, .5);
@@ -221,15 +221,15 @@
           transition: all .5s ease;
       }
       #bluetooth{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
       }
       #network{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
       }
       #battery{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease;
 
       }
@@ -250,11 +250,11 @@
           animation-direction: alternate;
       }
       #group-expand{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease; 
       }
       #custom-expand{
-          padding: 0px 5px;
+          padding: 0px 2px;
           color:rgba(0,0,0,.2);
           text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
           transition: all .3s ease; 
@@ -264,10 +264,10 @@
           text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
       }
       #custom-colorpicker{
-          padding: 0px 5px;
+          padding: 0px 2px;
       }
       #cpu,#memory,#temperature{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease; 
       }
       #custom-endpoint{
@@ -276,16 +276,16 @@
 
       }
       #tray{
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease; 
       }
       #tray menu * {
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease; 
       }
 
       #tray menu separator {
-          padding: 0px 5px;
+          padding: 0px 2px;
           transition: all .3s ease; 
       }
     '';

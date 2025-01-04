@@ -19,6 +19,7 @@
     fastfetch
     nerd-fonts.fantasque-sans-mono
     brave
+    vesktop
 
     sioyek
     zed-editor

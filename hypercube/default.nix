@@ -33,6 +33,35 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal ];
+    configPackages = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal
+    ];
+  };
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber = {
+      enable = true;
+      extraConfig = {
+        "10-disable-camera" = {
+          "wireplumber.profiles" = { main."monitor.libcamera" = "disabled"; };
+        };
+      };
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [ neovim git ];

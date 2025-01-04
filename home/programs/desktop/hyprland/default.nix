@@ -3,6 +3,7 @@
     ./bindings.nix
     ./hyprpaper.nix
     ./mime.nix
+    ./waybar.nix
 
     # other programs
     ../../terminal/kitty

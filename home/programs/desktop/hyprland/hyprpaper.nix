@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = [ pkgs.hyprpaper ];
   wayland.windowManager.hyprland.settings.exec-once =
-    [ "${pkgs.hyprpaper}/bin/hyprpaper" ];
+    [ "${pkgs.hyprpaper}/bin/hyprpaper" "waybar" ];
   services.hyprpaper = {
     enable = true;
     settings = {

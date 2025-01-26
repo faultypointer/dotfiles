@@ -12,21 +12,26 @@
   home.homeDirectory = "/home/faulty";
 
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "spotify" ];
+    builtins.elem (lib.getName pkg) [ "spotify" "obsidian" ];
 
   home.packages = with pkgs; [
     bat
+    btop
+    unzip
+    p7zip
     fastfetch
     nerd-fonts.fantasque-sans-mono
     brave
     vesktop
 
+    obsidian
     sioyek
     zed-editor
     rust-analyzer
     nixd
     nil
     nixfmt-rfc-style
+    uv
   ];
 
   home.stateVersion = "24.11";

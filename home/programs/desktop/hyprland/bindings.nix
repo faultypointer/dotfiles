@@ -14,6 +14,7 @@
       "$mod, S, exec, grimblast copy area"
       "$mod, E, exec, zeditor"
       "$mod, R, exec, sioyek"
+      "$mod, N, exec, obsidian"
     ] ++ (builtins.concatLists (builtins.genList (i:
       let ws = i + 1;
       in [

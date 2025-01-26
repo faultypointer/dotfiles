@@ -6,6 +6,7 @@
     ./waybar.nix
 
     # other programs
+    ../gtk
     ../../terminal/kitty
     ../../terminal/yazi
   ];
@@ -20,12 +21,17 @@
         gaps_out = 4;
       };
 
+      monitor = [ "eDP-2,highres,0x0,1" ",prefered,auto,1" ];
+      # monitor = [ ",prefered,auto,1" ];
+
       decoration = {
         rounding = 2;
         active_opacity = 0.85;
         inactive_opacity = 0.75;
         fullscreen_opacity = 1.0;
       };
+
+      misc = { vfr = true; };
 
       input.touchpad = { natural_scroll = true; };
 

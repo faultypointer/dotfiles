@@ -36,6 +36,12 @@
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = false;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -62,9 +68,14 @@
     };
   };
 
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ neovim git ];
+  environment.systemPackages = with pkgs; [ neovim git blueman man-pages man-pages-posix ];
 
   system.stateVersion = "24.11";
 

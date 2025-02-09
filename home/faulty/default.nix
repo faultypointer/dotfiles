@@ -23,6 +23,7 @@
     nerd-fonts.fantasque-sans-mono
     brave
     vesktop
+    webtorrent_desktop
 
     obsidian
     sioyek
@@ -32,6 +33,7 @@
     nil
     nixfmt-rfc-style
     uv
+    zrok
   ];
 
   home.stateVersion = "24.11";

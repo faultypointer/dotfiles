@@ -75,7 +75,18 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ neovim git blueman man-pages man-pages-posix ];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    neovim
+    git
+    blueman
+    man-pages
+    man-pages-posix
+  ];
 
   system.stateVersion = "24.11";
 

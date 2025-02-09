@@ -15,6 +15,8 @@
       "$mod, E, exec, zeditor"
       "$mod, R, exec, sioyek"
       "$mod, N, exec, obsidian"
+
+      "$mod, T, togglefloating," # Toggle Floating
     ] ++ (builtins.concatLists (builtins.genList (i:
       let ws = i + 1;
       in [

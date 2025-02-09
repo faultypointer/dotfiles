@@ -6,7 +6,7 @@
     ./waybar.nix
 
     # other programs
-    # ../gtk
+    ../gtk
     ../../terminal/kitty
     ../../terminal/yazi
   ];

@@ -7,7 +7,7 @@
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = "/home/${variables.username}/.ssh/private/iac-github";
+        identityFile = "/home/${variables.username}/.ssh/private/faulty-github";
       };
 
       "github.com-andsnap" = {

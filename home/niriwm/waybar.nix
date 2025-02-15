@@ -9,10 +9,15 @@
         # spacing = 4;
         modules-left = [ "clock" "niri/workspaces" ];
         modules-right = [ "network" "pulseaudio" "backlight" "battery" ];
+        modules-center = [ "tray" ];
 
         "niri/workspaces" = {
           all-outputs = true;
           format = "{value}";
+        };
+        "tray" = {
+          icon-size = 21;
+          spacing = 10;
         };
 
         "pulseaudio" = {

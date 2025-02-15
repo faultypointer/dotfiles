@@ -5,7 +5,6 @@
     tuba
     fractal
     fragments
-    varia
     newsflash
     valent
   ];

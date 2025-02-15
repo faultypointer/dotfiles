@@ -5,7 +5,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        mode = "overlay";
+        # mode = "overlay";
         # spacing = 4;
         modules-left = [ "clock" "niri/workspaces" ];
         modules-right = [ "network" "pulseaudio" "backlight" "battery" ];

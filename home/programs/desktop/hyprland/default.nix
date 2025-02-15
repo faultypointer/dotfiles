@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./bindings.nix
     ./hyprpaper.nix
@@ -10,6 +10,8 @@
     ../../terminal/kitty
     ../../terminal/yazi
   ];
+
+  home.packages = with pkgs; [ wlr-randr ];
 
   wayland.windowManager.hyprland = {
     enable = true;

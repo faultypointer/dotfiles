@@ -1,0 +1,21 @@
+{
+  programs.nixvim = {
+    plugins = {
+      copilot-lua = {
+        enable = true;
+        settings = {
+          panel.enabled = false;
+          suggestion.enabled = false;
+          filetypes = {
+            "*" = false;
+            python = true;
+            typescript = true;
+            typescriptreact = true;
+          };
+        };
+      };
+      copilot-cmp.enable = true;
+      copilot-chat.enable = true;
+    };
+  };
+}

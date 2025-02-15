@@ -1,23 +1,13 @@
 {
-  description = "my's very own nixos flake.";
+  description = "NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    niri.url = "github:sodiboo/niri-flake";
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    plugin-markdown = {
-      url = "github:MeanderingProgrammer/markdown.nvim";
-      flake = false;
-    };
-    minimal-tmux = {
-      url = "github:niksingh710/minimal-tmux-status";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,32 +16,44 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    minimal-tmux = {
+      url = "github:niksingh710/minimal-tmux-status";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    asus-numberpad-driver = {
+      url = "github:scientiac/asus-numberpad-driver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let variables = import ./home/faulty/variables.nix { inherit inputs; };
+    let variables = import ./variables { inherit inputs; };
     in {
-      nixosConfigurations = {
-        hypercube = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit self inputs variables; };
-          modules = [
-            ./hypercube
+      nixosConfigurations.${variables.hostname} = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit self inputs variables; };
+        modules = [
+          home-manager.nixosModules.home-manager
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "HMbackup";
-              home-manager.extraSpecialArgs = { inherit inputs variables; };
-              home-manager.users.faulty = import ./home/faulty;
-            }
-          ];
-        };
+          ./system
+          ./home
+        ];
       };
     };
 }

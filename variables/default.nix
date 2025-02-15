@@ -1,6 +1,6 @@
 { inputs, ... }: {
   username = "faulty";
-  hostname = "hyprcube";
+  hostname = "hypercube";
   email = "faultypointer@proton.me";
 
   font = { name = "FantasqueSansM Nerd Font"; };

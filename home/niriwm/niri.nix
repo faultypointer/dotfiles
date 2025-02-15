@@ -2,11 +2,11 @@
   home.packages = with pkgs; [ swayosd clipse ];
   programs.niri.settings = {
     outputs."eDP-1" = {
-      scale = 2.0;
+      scale = 1.0;
       mode = {
-        width = 2880;
-        height = 1800;
-        refresh = 120.001;
+        width = 1920;
+        height = 1080;
+        refresh = 60.001;
       };
     };
 

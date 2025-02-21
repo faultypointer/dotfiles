@@ -17,5 +17,6 @@
     telegram-desktop
     easyeffects
     brave
+    zed-editor
   ];
 }

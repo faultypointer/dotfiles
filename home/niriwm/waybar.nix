@@ -7,9 +7,9 @@
         position = "top";
         # mode = "overlay";
         # spacing = 4;
-        modules-left = [ "clock" "niri/workspaces" ];
+        modules-left = [ "clock" "tray" "niri/workspaces" ];
         modules-right = [ "network" "pulseaudio" "backlight" "battery" ];
-        modules-center = [ "tray" ];
+        # modules-center = [ "tray" ];
 
         "niri/workspaces" = {
           all-outputs = true;

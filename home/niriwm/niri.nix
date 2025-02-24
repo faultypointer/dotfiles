@@ -47,7 +47,7 @@
 
     switch-events = {
       lid-close.action.spawn = [ "blurlock" ];
-      lid-open.action.spawn = [ "brightnessctl" "set" "100" ];
+      lid-open.action.spawn = [ "brightnessctl" "set" "10" ];
     };
 
     binds = with config.lib.niri.actions;

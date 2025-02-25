@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     trash-cli
     eza
+    bat
   ];
 
   programs.starship = {

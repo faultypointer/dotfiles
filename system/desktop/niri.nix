@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }: {
   imports = [ inputs.niri.nixosModules.niri ];
 
-  environment.systemPackages = with pkgs; [ xwayland-satellite ];
+  environment.systemPackages = with pkgs; [ xwayland-satellite ladybird ];
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 

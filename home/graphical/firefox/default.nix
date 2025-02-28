@@ -34,7 +34,7 @@
         name = variables.username;
         isDefault = true;
 
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           bitwarden
           vimium-c

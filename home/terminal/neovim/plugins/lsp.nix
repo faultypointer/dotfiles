@@ -1,5 +1,11 @@
 {
-programs.nixvim.plugins = {
+  programs.nixvim.plugins = {
+    zig = {
+    enable = true;
+    settings = {
+        fmt_autosave = 0;
+      };
+    };
     lsp-format.enable = true;
     lsp = {
       enable = true;
@@ -18,11 +24,8 @@ programs.nixvim.plugins = {
           installCargo = false;
           installRustc = false;
         };
+        zls.enable = true;
         ols.enable = true;
-        zls = {
-          enable = true;
-          settings = { warn_style = true; };
-        };
       };
       keymaps.lspBuf = {
         "gd" = "definition";
@@ -44,7 +47,6 @@ programs.nixvim.plugins = {
           goimports.enable = true;
           nixfmt.enable = true;
           markdownlint.enable = true;
-          tidy.enable = true;
           shellharden.enable = true;
           shfmt.enable = true;
         };
@@ -52,4 +54,3 @@ programs.nixvim.plugins = {
     };
   };
 }
-

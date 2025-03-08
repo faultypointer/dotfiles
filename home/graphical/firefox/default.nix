@@ -3,7 +3,7 @@
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.firefox-beta-unwrapped {
+    package = pkgs.wrapFirefox pkgs.firefox-beta-bin-unwrapped {
       extraPolicies = {
         CaptivePortal = false;
         DisableFirefoxStudies = true;

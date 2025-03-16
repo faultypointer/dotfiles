@@ -1,6 +1,8 @@
 input {
     keyboard {
         xkb {
+          layout "us"
+          model "Generic 105-key PC"
         }
     }
     touchpad {
@@ -141,6 +143,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     Mod+Print { screenshot; }
+    Mod+S { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 

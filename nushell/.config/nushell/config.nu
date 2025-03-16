@@ -18,6 +18,7 @@ $env.config.show_banner = false
 
 
 source ~/.cache/carapace/init.nu
+source ~/.zoxide.nu
 
 alias "cat" = bat
 alias "eza" = eza --hyperlink --group-directories-first --icons --tree '--color=always' '--level=1'

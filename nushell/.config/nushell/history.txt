@@ -441,3 +441,30 @@ ls
 ls ~/.config/
 bat ~/.gitconfig 
 clear
+lazygit
+cargo binstall zoxide
+cat /sys/class/power_supply/BAT0/status
+cat /sys/class/power_supply/BAT0/capacity 
+$nu.env-path
+cd git/dot/
+nvim
+cd git/dot/
+cd
+z dot
+xset
+nvim
+dmesg | grep -i keyboard
+sudo dmesg | grep -i keyboard
+wayland-scanner 
+localectl
+sudo xbps-install localectl
+xfce4-keyboard-settings 
+sudo xbps-install xwayland-satellite
+xfce4-keyboard-settings 
+xwayland-satellite 
+cler
+clear
+z dot
+nvim
+clear
+ls

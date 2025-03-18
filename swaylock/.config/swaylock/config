@@ -1,0 +1,15 @@
+indicator-caps-lock
+indicator-idle-visible
+ignore-empty-password
+show-failed-attempts
+show-keyboard-layout
+image=~/.config/swaylock/lockscreen.jpg
+indicator-radius=150
+font=Noto Sans
+color=de5648
+text-color=e8eaed
+inside-color=de5648
+inside-clear-color=eeeeee
+ring-color=317b79
+ring-clear-color=317b79
+ring-ver-color=2980b9

@@ -143,10 +143,6 @@ for_window [app_id="danmufloat"] resize set width 960
 #-----------------------------#
 # Window Opacity              #
 #-----------------------------#
-for_window [app_id="telegram"] opacity 0.95
-for_window [app_id="danmufloat"] opacity 0.80
-for_window [app_id="icalingua"] opacity 0.95
-for_window [class="netease-cloud-music"] opacity 0.90
 
 #-----------------------------#
 # Input Configuration         #

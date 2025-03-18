@@ -286,3 +286,4 @@ bindsym Shift+Ctrl+Down resize shrink height 5 px
 bindsym Shift+Ctrl+Right         resize grow   width  5 px or 5 ppt
 
 exec foot
+output eDP-1 bg ~/git/dotfiles/wallpapers/yourname-stairs.png stretch

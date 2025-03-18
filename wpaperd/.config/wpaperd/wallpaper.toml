@@ -1,5 +1,0 @@
-[default]
-path = "/home/faulty/git/dotfiles/wallpapers/sukuna-open.jpeg"
-
-[default.transition.hexagonalize]
-steps = 50

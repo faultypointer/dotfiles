@@ -9,12 +9,17 @@ set $right l
 exec dbus-update-activation-environment --systemd \
     WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP \
     XDG_CURRENT_SESSION XDG_SESSION_DESKTOP \
-    ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD
+    ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD \
+    XDG_CURRENT_DESKTOP=sway:wlroots
 
 exec systemctl --user import-environment \
     WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP \
     XDG_CURRENT_SESSION XDG_SESSION_DESKTOP \
     ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD
+
+
+exec /usr/libexec/xdg-desktop-portal-wlr -r
+exec sleep 1 && /usr/libexec/xdg-desktop-portal -r
 
 #-----------------------------#
 # Lock Screen Configuration    #
@@ -47,6 +52,7 @@ bindsym $mod+space exec killall -SIGUSR1 waybar
 #-----------------------------#
 # Switch between current and last workspace
 bindsym $mod+slash workspace back_and_forth
+
 
 # Workspace Shortcuts
 # Switch to workspace
@@ -242,9 +248,9 @@ bindsym $mod+semicolon splitv
 bindsym $mod+apostrophe splith
 
 # Change layout styles
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+ctrl+s layout stacking
+bindsym $mod+ctrl+w layout tabbed
+bindsym $mod+ctrl+e layout toggle split
 
 # Fullscreen and floating toggle
 bindsym $mod+f fullscreen
@@ -284,6 +290,26 @@ bindsym Shift+Ctrl+Left resize shrink width 5 px
 bindsym Shift+Ctrl+Up resize grow height 5 px
 bindsym Shift+Ctrl+Down resize shrink height 5 px
 bindsym Shift+Ctrl+Right         resize grow   width  5 px or 5 ppt
+
+#--------------------#
+# Screen capture     #
+#--------------------#
+set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
+mode "$screenshot" {
+    bindsym 1 exec 'grim -g "$(slurp)" ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+    bindsym 2 exec 'grim ~/ps_$(date +"%Y%m%d%H%M%S").png', mode "default"
+    bindsym 3 exec 'grim -g "$(slurp)" - | wl-copy', mode "default"
+    bindsym 4 exec 'grim - | wl-copy', mode "default"
+    # bindsym 5 exec 'grim -g "$(slurp)" - | swappy -f -', mode "default"
+
+# back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Print mode "default"
+}
+
+bindsym $mod+s mode "$screenshot"
+
 
 exec foot
 output eDP-1 bg ~/git/dotfiles/wallpapers/yourname-stairs.png stretch

@@ -42,7 +42,7 @@ key = "N"
 mods = "Control|Shift"
 
 [terminal.shell]
-program = "nu"
+program = "fish"
 
 [window]
 decorations = "none"

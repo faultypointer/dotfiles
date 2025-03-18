@@ -34,6 +34,9 @@ exec swayidle -w \
 #-----------------------------#
 bar {
     swaybar_command waybar
+    hidden_state hide
+    mode hide
+    position bottom
 }
 
 # Waybar Toggle
@@ -281,3 +284,5 @@ bindsym Shift+Ctrl+Left resize shrink width 5 px
 bindsym Shift+Ctrl+Up resize grow height 5 px
 bindsym Shift+Ctrl+Down resize shrink height 5 px
 bindsym Shift+Ctrl+Right         resize grow   width  5 px or 5 ppt
+
+exec foot

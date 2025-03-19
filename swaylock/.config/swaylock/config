@@ -3,7 +3,7 @@ indicator-idle-visible
 ignore-empty-password
 show-failed-attempts
 show-keyboard-layout
-image=~/.config/swaylock/lockscreen.jpg
+image=~/git/dotfiles/wallpapers/aftergod-alula.png
 indicator-radius=150
 font=Noto Sans
 color=de5648

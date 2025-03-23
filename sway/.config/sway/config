@@ -142,6 +142,10 @@ for_window [app_id="danmufloat"] sticky enable
 for_window [app_id="danmufloat"] resize set height 540
 for_window [app_id="danmufloat"] resize set width 960
 
+
+# stop swayidle from locking full screen firefox
+for_window [app_id="firefox"] inhibit_idle fullscreen
+
 #-----------------------------#
 # Window Opacity              #
 #-----------------------------#
@@ -307,7 +311,6 @@ mode "$screenshot" {
 }
 
 bindsym $mod+s mode "$screenshot"
-
 
 exec foot
 output eDP-1 bg ~/git/dotfiles/wallpapers/aftergod-alula.png stretch

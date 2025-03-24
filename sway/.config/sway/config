@@ -312,5 +312,6 @@ mode "$screenshot" {
 
 bindsym $mod+s mode "$screenshot"
 
+exec emacs --daemon
 exec foot
 output eDP-1 bg ~/git/dotfiles/wallpapers/aftergod-alula.png stretch

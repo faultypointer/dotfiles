@@ -2,7 +2,7 @@ auto-save-list
 eln-cache
 elpa
 *~
-lockscreen.png
+swaylock/.config/swaylock/lockscreen.png
 emacs/.emacs.d/history
 emacs/.emacs.d/places
 emacs/.emacs.d/recentf

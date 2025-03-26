@@ -1,4 +1,4 @@
-;; main settings
+;; main settings --------------------------------------------------------------------------------------------
 (setq
  ;; no welcome screen
  inhibit-startup-message t
@@ -51,27 +51,22 @@
 ;; themes and colors
 
 ;; transparency lets goo
-(set-frame-parameter nil 'alpha-background 80)
-(add-to-list 'default-frame-alist '(alpha-background . 80))
+(set-frame-parameter nil 'alpha-background 85)
+(add-to-list 'default-frame-alist '(alpha-background . 85))
 
 ;; underlying theme
 (load-theme 'modus-vivendi t)
 
 
 
-;; packages
+;; packages--------------------------------------------------------------------------------------------------
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (package-initialize)
 
-
-
-
-
-
-;; org mode
+;; org mode --------------------------------------------------------------------------------------------------
 
 ;; languages
 (org-babel-do-load-languages
@@ -80,3 +75,16 @@
 
 ;; use sly to eval lisp code block instead of slime
 (setq org-babel-lisp-eval-fn #'sly-eval)
+
+;; hide emphasis markers (bold italic code etc markers)
+;; still debating whether to do it or not
+(setq org-hide-emphasis-markers t)
+
+;; better bullets (also broken)
+(font-lock-add-keywords 'org-mode
+                        '(("^ +\\([-*]\\) "
+                           (0 (prog1 () (compose-region (match-begining 1) (match-end 1) "•"))))))
+
+;; better header bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

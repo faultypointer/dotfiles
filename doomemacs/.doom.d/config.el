@@ -18,9 +18,9 @@
 ;; accept. For example:
 
 
-(setq doom-font (font-spec :family "Fira Code" :style "Light" :size 14 :height 1.0)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :height 1.3)
-      doom-big-font (font-spec :family "Fira Code" :style "Light" :size 24))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :style "Light" :size 14 :height 1.0)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :height 1.3)
+      doom-big-font (font-spec :family "FiraCode Nerd Font" :style "Light" :size 24))
 
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -74,9 +74,6 @@
 ;; tell emacs to use posix shell internally
 (setq shell-file-name (executable-find "bash"))
 
-;; emacs terminal emulator use fish
-;; (setq-default vterm-shell "/bin/fish")
-(setq-default explicit-shell-file-name "/bin/fish")
 
 
 ;; org mode stuff==============================================================================================================

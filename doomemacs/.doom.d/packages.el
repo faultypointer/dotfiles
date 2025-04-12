@@ -49,3 +49,4 @@
 ;; (unpin! t)
 
 (package! mixed-pitch)
+(package! exec-path-from-shell)

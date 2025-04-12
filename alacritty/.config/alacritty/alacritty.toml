@@ -28,21 +28,18 @@ style = "Beam"
 [font]
 size = 11.0
 [font.bold]
-family = "FantasqueSansM Nerd Font"
+family = "FiraCode Nerd Font"
 
 [font.italic]
-family = "FantasqueSansM Nerd Font"
+family = "FiraCode Nerd Font"
 
 [font.normal]
-family = "FantasqueSansM Nerd Font"
+family = "FiraCode Nerd Font"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
 key = "N"
 mods = "Control|Shift"
-
-[terminal.shell]
-program = "fish"
 
 [window]
 decorations = "none"

@@ -17,6 +17,7 @@ exec systemctl --user import-environment \
     XDG_CURRENT_SESSION XDG_SESSION_DESKTOP \
     ELECTRON_OZONE_PLATFORM_HINT QT_QPA_PLATFORM GTK_CSD
 
+include /etc/sway/config.d/*
 
 exec /usr/libexec/xdg-desktop-portal-wlr -r
 exec sleep 1 && /usr/libexec/xdg-desktop-portal -r

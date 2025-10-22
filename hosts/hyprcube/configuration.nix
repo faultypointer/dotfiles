@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ pkgs, config, ... }: {
   imports = [
     ../modules/fonts.nix
     ../modules/zsh.nix
@@ -28,6 +28,8 @@
     enable = true;
     setSocketVariable = true;
   };
+
+  environment.systemPackages = with pkgs; [ obsidian ];
 
   # Don't touch this
   system.stateVersion = "25.05";

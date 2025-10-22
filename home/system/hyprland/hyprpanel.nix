@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [ hyprpanel libnotify ];
 
-  home.file.".cache/ags/hyprpanel/options.json" = {
+  home.file.".config/hyprpanel/config.json" = {
     text = # json
       ''
         {

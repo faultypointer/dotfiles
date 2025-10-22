@@ -2,7 +2,7 @@
   imports = [ ../modules/variables-config.nix ];
 
   config.var = {
-    hostname = "hypercube";
+    hostname = "hyprcube";
     username = "faulty";
     homeDirectory = "/home/" + config.var.username;
     configDirectory = config.var.homeDirectory + "/.dotfiles/nixos";

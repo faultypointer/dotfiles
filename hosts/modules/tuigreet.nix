@@ -4,13 +4,13 @@
     settings = {
       default_session = {
         command =
-          "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
+          "${pkgs.tuigreet}/bin/tuigreet --remember --asterisks --container-padding 2 --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
         user = "greeter";
       };
     };
   };
 
-  environment.systemPackages = with pkgs; [ greetd.tuigreet ];
+  environment.systemPackages = with pkgs; [ tuigreet ];
 
   # this is a life saver.
   # literally no documentation about this anywhere.
@@ -28,6 +28,11 @@
   };
 
   # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  systemd.settings.Manager = {
+    KExecWatchdogSec = "5min";
+    RebootWatchdogSec = "10min";
+    RuntimeWatchdogSec = "30s";
+    WatchdogDevice = "/dev/watchdog";
+  };
 
 }

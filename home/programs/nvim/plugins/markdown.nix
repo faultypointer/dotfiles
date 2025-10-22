@@ -9,7 +9,7 @@
     plugins = {
       mkdnflow = {
         enable = true;
-        mappings = {
+        settings.mappings = {
 
           # Main
           MkdnEnter = {

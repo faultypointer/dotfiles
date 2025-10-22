@@ -19,7 +19,7 @@
       trouble.enable = true;
       indent-blankline.enable = true;
       which-key.enable = true;
-      nvim-colorizer.enable = true;
+      colorizer.enable = true;
       tagbar.enable = true; # FIXME: Tagbar is not working
     };
     keymaps = [{

@@ -36,6 +36,7 @@
     packages = with pkgs; [
       # Apps
       discord
+      signal-desktop
       xfce.thunar
       vlc
       webtorrent_desktop
@@ -82,7 +83,7 @@
     file.".profile_picture.png" = { source = ./hikaru.jpg; };
 
     # Don't touch this
-    stateVersion = "24.05";
+    stateVersion = "25.05";
   };
 
   # services.flameshot = {

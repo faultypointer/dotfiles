@@ -11,7 +11,7 @@
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
 
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       bindkey -e
       ${if config.var.theme.fetch == "neofetch" then
         pkgs.neofetch + "/bin/neofetch"

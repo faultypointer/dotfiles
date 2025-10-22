@@ -24,8 +24,8 @@
     };
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    anotherhadi-portfolio.url = "github:anotherhadi/portfolio";
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # anotherhadi-portfolio.url = "github:anotherhadi/portfolio";
     plugin-markdown = {
       url = "github:MeanderingProgrammer/markdown.nvim";
       flake = false;
@@ -37,31 +37,28 @@
   };
 
   outputs = inputs@{ nixpkgs, nixvim, ... }:
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-  in
-  {
-    nixosConfigurations = {
-      specialArgs = {
-        inherit inputs;
-      };
-      hypercube = nixpkgs.lib.nixosSystem { # CHANGEME
-        modules = [
-          {
-            nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-            _module.args = { inherit inputs; };
-          }
-          # nur.nixosModules.nur
-          inputs.nixos-hardware.nixosModules.common-gpu-amd
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-          ./hosts/hypercube/configuration.nix
-        ];
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in {
+      nixosConfigurations = {
+        specialArgs = { inherit inputs; };
+        hyprcube = nixpkgs.lib.nixosSystem { # CHANGEME
+          modules = [
+            {
+              # nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+              _module.args = { inherit inputs; };
+            }
+            # nur.nixosModules.nur
+            inputs.nixos-hardware.nixosModules.common-gpu-amd
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+            ./hosts/hyprcube/configuration.nix
+          ];
+        };
       };
     };
-  };
 }

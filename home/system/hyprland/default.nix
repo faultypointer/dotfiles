@@ -63,10 +63,10 @@
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, SPACE, exec, menu" # Launcher
         "$mod, E, exec, zeditor" # zed
-        "$mod, Z, exec, zathura" 
+        "$mod, Z, exec, zathura"
         # "$shiftMod, SPACE, hyprexpo:expo, toggle" # HyprExpo
 
-        "$mod, Q, killactive," # Close window
+        "$mod, Backspace, killactive," # Close window
         "$mod, T, togglefloating," # Toggle Floating
         "$mod, F, fullscreen" # Toggle Fullscreen
         "$mod, left, movefocus, l" # Move focus left
@@ -110,6 +110,8 @@
         ", XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
       ];
 
+      gesture = [ "3,horizontal,workspace" ];
+
       env = [
         "XDG_SESSION_TYPE,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -139,7 +141,7 @@
         border_size = config.var.theme.border-size;
         "col.active_border" = "rgba(${config.var.theme.colors.accent}ff)";
         "col.inactive_border" = "rgba(00000055)";
-        border_part_of_window = true;
+        # border_part_of_window = true;
         layout = "master";
       };
 
@@ -160,7 +162,7 @@
         mfact = 0.5;
       };
 
-      gestures = { workspace_swipe = true; };
+      #  gestures = { workspace_swipe = true; };
 
       misc = {
         vfr = true;
@@ -170,8 +172,6 @@
         focus_on_activate = true;
         new_window_takes_over_fullscreen = 2;
       };
-
-      render = { explicit_sync = "0"; };
 
       opengl = { nvidia_anti_flicker = false; };
 

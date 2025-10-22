@@ -70,7 +70,7 @@
       # typst-lsp
       # typst-live
 
-      dbgate 
+      dbgate
     ];
 
     # Import wallpapers into $HOME/wallpapers

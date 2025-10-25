@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, inputs, ... }: {
   imports = [
     ../modules/fonts.nix
     ../modules/zsh.nix

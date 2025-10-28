@@ -77,7 +77,7 @@
         "$shiftMod, right, layoutmsg, removemaster" # Remove from master
 
         "$mod, PRINT, exec, screenshootin" # Screenshot window
-        ", PRINT, exec, hyprshot -m region" # Screenshot region
+        ", PRINT, exec, hyprshot -m region -o ~/Pictures/Screenshots/" # Screenshot region
         "$ALT, PRINT, exec, screenshootin" # Screenshot region
         "$mod, S, exec, screenshootin"
 

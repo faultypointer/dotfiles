@@ -15,6 +15,7 @@
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
+      bind-key t display-popup -E -w 80% -h 80% -d "#{pane_current_path}"
       set -gq allow-passthrough on
     '';
 

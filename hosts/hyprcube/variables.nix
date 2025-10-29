@@ -1,11 +1,14 @@
-{ config, ... }: {
-  imports = [ ../modules/variables-config.nix ];
+{ config, lib, ... }: {
+  imports = [
+    # Choose your theme here:
+    ../../themes/nixy.nix
+  ];
 
   config.var = {
     hostname = "hyprcube";
     username = "faulty";
-    homeDirectory = "/home/" + config.var.username;
-    configDirectory = config.var.homeDirectory + "/.dotfiles/nixos";
+    configDirectory = "/home/" + config.var.username
+      + "/git/dotfiles"; # The path of the nixos configuration directory
 
     keyboardLayout = "us";
 
@@ -20,19 +23,14 @@
     };
 
     autoUpgrade = false;
-    autoGarbageCollector = false;
+    autoGarbageCollector = true;
+  };
 
-
-    # Enable tailscale
-    tailscale = false;
-
-    # USBGuard
-    # If usbguard enabled: set yours pref USB devices (change {id} to your trusted USB device), use `lsusb` command (from usbutils package) to get list 
-    # of all connected USB devices including integrated devices like camera, bluetooth, wifi, etc. with their IDs or just disable `usbguard`
-    # allow id {id} # device 1...
-    usbguard = false;
-    usbguardRules = "";
-
-    theme = import ../themes/hikaru.nix; # select your theme here
+  # Let this here
+  options = {
+    var = lib.mkOption {
+      type = lib.types.attrs;
+      default = { };
+    };
   };
 }

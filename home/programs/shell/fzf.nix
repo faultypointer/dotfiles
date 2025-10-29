@@ -1,14 +1,20 @@
-{ config, ... }: {
+# Fzf is a general-purpose command-line fuzzy finder.
+{ config, lib, ... }:
+let
+  accent = "#" + config.lib.stylix.colors.base0D;
+  foreground = "#" + config.lib.stylix.colors.base05;
+  muted = "#" + config.lib.stylix.colors.base03;
+in {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-    colors = {
-      "fg+" = config.var.theme.colors.accentName;
+    colors = lib.mkForce {
+      "fg+" = accent;
       "bg+" = "-1";
-      "fg" = "white";
+      "fg" = foreground;
       "bg" = "-1";
-      "prompt" = "grey";
-      "pointer" = config.var.theme.colors.accentName;
+      "prompt" = muted;
+      "pointer" = accent;
     };
     defaultOptions = [
       "--margin=1"

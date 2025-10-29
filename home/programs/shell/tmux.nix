@@ -1,4 +1,30 @@
-{ pkgs, ... }: {
+# Tmux is a terminal multiplexer that allows you to run multiple terminal sessions in a single window.
+{ pkgs, ... }:
+let
+  Config = pkgs.writeShellScriptBin "Config" ''
+    SESSION="Nixy Config"
+
+    tmux has-session -t "$SESSION" 2>/dev/null
+
+    if [ $? == 0 ]; then
+      tmux attach -t "$SESSION"
+      exit 0
+    fi
+
+    tmux new-session -d -s "$SESSION"
+    tmux send-keys -t "$SESSION" "sleep 0.2 && clear && cd ~/.config/nixos/ && vim" C-m
+
+    tmux new-window -t "$SESSION" -n "nixy"
+    tmux send-keys -t "$SESSION":1 "sleep 0.2 && clear && cd ~/.config/nixos/ && nixy loop" C-m
+
+    tmux new-window -t "$SESSION" -n "lazygit"
+    tmux send-keys -t "$SESSION":2 "sleep 0.2 && clear && cd ~/.config/nixos/ && lazygit" C-m
+
+    tmux select-window -t "$SESSION":0
+    tmux select-pane -t 0
+    tmux attach -t "$SESSION"
+  '';
+in {
   programs.tmux = {
     enable = true;
     mouse = true;
@@ -8,45 +34,25 @@
     keyMode = "vi";
 
     extraConfig = ''
-      bind-key c new-window -c "#{pane_current_path}"
-      bind-key % split-window -h -c "#{pane_current_path}"
-      bind-key '"' split-window -v -c "#{pane_current_path}"
       bind-key h select-pane -L
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
-      bind-key t display-popup -E -w 80% -h 80% -d "#{pane_current_path}"
+
       set -gq allow-passthrough on
+      bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt
+
+      bind-key -n C-Tab next-window
+      bind-key -n C-S-Tab previous-window
+      bind-key -n M-Tab new-window
     '';
 
     plugins = with pkgs; [
       tmuxPlugins.vim-tmux-navigator
-      {
-        plugin = tmuxPlugins.catppuccin;
-        extraConfig = ''
-          set-option -g status-position top
-          set -g @catppuccin_window_left_separator ""
-          set -g @catppuccin_window_right_separator " "
-          set -g @catppuccin_window_middle_separator " █"
-          set -g @catppuccin_window_number_position "right"
-
-          set -g @catppuccin_window_default_fill "number"
-          set -g @catppuccin_window_default_text "#W"
-
-          set -g @catppuccin_window_current_fill "number"
-          set -g @catppuccin_window_current_text "#W"
-
-          set -g @catppuccin_status_modules_right ""
-          set -g @catppuccin_status_left_separator  " "
-          set -g @catppuccin_status_right_separator ""
-          set -g @catppuccin_status_fill "icon"
-          set -g @catppuccin_status_connect_separator "no"
-
-          set -g @catppuccin_directory_text "#{pane_current_path}"
-          set -g @catppuccin_status_background "default"
-          set-option -g default-terminal "screen-256color"
-        '';
-      }
+      # tmuxPlugins.resurrect
+      tmuxPlugins.sensible
+      tmuxPlugins.tokyo-night-tmux
     ];
   };
+  home.packages = [ Config ];
 }

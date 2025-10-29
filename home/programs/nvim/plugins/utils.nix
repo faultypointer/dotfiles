@@ -1,56 +1,23 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
   programs.nixvim = {
+    nixpkgs.config.allowUnfree = true; # For copilot
     highlightOverride = {
-      FloatBorder.fg = "#${config.var.theme.colors.accent}";
+      FloatBorder.fg = "#${config.lib.stylix.colors.base0D}";
     };
     plugins = {
+      copilot-vim.enable = true;
       flash.enable = true;
-      # image.enable = true;
       tmux-navigator.enable = true;
-      comment.enable = true;
-      nvim-autopairs.enable = true;
-      friendly-snippets.enable = true;
-      telescope = {
-        enable = true;
-        keymaps = {
-          "<leader>fg" = "live_grep";
-          "<leader> " = "find_files";
-        };
-        extensions.fzf-native = { enable = true; };
-      };
+      todo-comments.enable = true;
       treesitter = {
         enable = true;
         nixGrammars = true;
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          markdown
-          markdown-inline
-          latex
-          c-sharp
-        ];
         settings = {
+          ensure_installed = "all";
           indent.enable = true;
           highlight.enable = true;
         };
       };
-      treesitter-context.enable = true;
     };
-    keymaps = [
-      {
-        key = "<C-h>";
-        action = "<cmd>TmuxNavigateLeft<cr>";
-      }
-      {
-        key = "<C-j>";
-        action = "<cmd>TmuxNavigateDown<cr>";
-      }
-      {
-        key = "<C-k>";
-        action = "<cmd>TmuxNavigateUp<cr>";
-      }
-      {
-        key = "<C-l>";
-        action = "<cmd>TmuxNavigateRight<cr>";
-      }
-    ];
   };
 }

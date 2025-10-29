@@ -1,36 +1,26 @@
-{ pkgs, config, inputs, ... }: {
+{ config, ... }: {
   imports = [
-    ../modules/fonts.nix
-    ../modules/zsh.nix
-    ../modules/tuigreet.nix
-    ../modules/auto-upgrade.nix
-    ../modules/timezone.nix
-    ../modules/usb.nix
-    ../modules/systemd-boot.nix
-    ../modules/users.nix
-    ../modules/audio.nix
-    ../modules/bluetooth.nix
-    ../modules/nix.nix
-    ../modules/network-manager.nix
-    ../modules/home-manager.nix
-    ../modules/power-profiles.nix
-    ../modules/utils.nix
-    ../modules/gvfs.nix
-    ../modules/xdg-portal.nix
+    # Mostly system related configuration
+    ../../nixos/audio.nix
+    ../../nixos/bluetooth.nix
+    ../../nixos/fonts.nix
+    ../../nixos/home-manager.nix
+    ../../nixos/nix.nix
+    ../../nixos/systemd-boot.nix
+    # ../../nixos/grub.nix
+    ../../nixos/sddm.nix
+    ../../nixos/users.nix
+    ../../nixos/utils.nix
+    # ../../nixos/docker.nix
+    ../../nixos/tailscale.nix
 
+    # You should let those lines as is
     ./hardware-configuration.nix
     ./variables.nix
   ];
 
   home-manager.users."${config.var.username}" = import ./home.nix;
 
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
-
-  environment.systemPackages = with pkgs; [ obsidian ];
-
   # Don't touch this
-  system.stateVersion = "25.05";
+  system.stateVersion = "24.05";
 }

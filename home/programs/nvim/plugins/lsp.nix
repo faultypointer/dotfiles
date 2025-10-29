@@ -1,35 +1,16 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.c3-lsp ];
-  programs.nixvim.extraConfigLua = ''
-    require('lspconfig').csharp_ls.setup {
-     cmd = { "csharp-ls" }, -- Ensure this points to the Nix-installed binary
-     on_attach = on_attach,
-     capabilities = capabilities,
-    }
-  '';
+{
   programs.nixvim.plugins = {
     lsp-format.enable = true;
     lsp = {
       enable = true;
       servers = {
-        asm_lsp.enable = true;
         bashls.enable = true;
-        clangd.enable = true;
-        cmake.enable = true;
         gopls.enable = true;
+        ts_ls.enable = true;
         nixd.enable = true;
-        pylsp.enable = true;
-        marksman.enable = true;
-        rust_analyzer = {
-          enable = true;
-          installCargo = false;
-          installRustc = false;
-        };
-        ols.enable = true;
-        zls = {
-          enable = true;
-          settings = { warn_style = true; };
-        };
+        tailwindcss.enable = true;
+        html.enable = true;
+        svelte.enable = true;
       };
       keymaps.lspBuf = {
         "gd" = "definition";
@@ -54,6 +35,8 @@
           tidy.enable = true;
           shellharden.enable = true;
           shfmt.enable = true;
+          golines.enable = true;
+          gofumpt.enable = true;
         };
       };
     };

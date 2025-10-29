@@ -1,4 +1,4 @@
-# PDF viewer
+# Zathura is a PDF viewer
 {
   programs.zathura = {
     enable = true;
@@ -10,9 +10,5 @@
       render-loading = false;
       scroll-step = 120;
     };
-
-    extraConfig = ''
-        set selection-clipboard clipboard
-    '';
   };
 }

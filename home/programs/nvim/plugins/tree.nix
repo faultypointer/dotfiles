@@ -1,13 +1,17 @@
 {
   programs.nixvim = {
     plugins = {
-      web-devicons.enable = true;
       neo-tree.enable = true;
       oil = {
         enable = true;
         settings = {
           default_file_explorer = false;
           skip_confirm_for_simple_edits = true;
+          view_options.is_hidden_file = ''
+            function(name, bufnr)
+              return vim.startswith(name, ".") or name == "img"
+            end
+          '';
           win_options = {
             concealcursor = "ncv";
             conceallevel = 3;
@@ -41,22 +45,5 @@
         };
       };
     };
-    keymaps = [
-      {
-        key = "-";
-        action = "<cmd>Oil<cr>";
-        options.desc = "Oil";
-      }
-      {
-        key = "<leader>e";
-        action = "<cmd>Oil --float<cr>";
-        options.desc = "Oil";
-      }
-      {
-        key = "<leader>E";
-        action = "<cmd>Neotree toggle<cr>";
-        options.desc = "Neotree";
-      }
-    ];
   };
 }

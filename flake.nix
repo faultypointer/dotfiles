@@ -7,7 +7,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nur.url = "github:nix-community/NUR";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    stylix.url = "github:danth/stylix";
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    zen-browser.url = "git+https://git.sr.ht/~canasta/zen-browser-flake/";
+    nixcord.url = "github:kaylorben/nixcord";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,19 +22,17 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    # anotherhadi-portfolio.url = "github:anotherhadi/portfolio";
-    plugin-markdown = {
-      url = "github:MeanderingProgrammer/markdown.nvim";
-      flake = false;
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
     };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -36,29 +40,23 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixvim, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
-    in {
-      nixosConfigurations = {
-        specialArgs = { inherit inputs; };
-        hyprcube = nixpkgs.lib.nixosSystem { # CHANGEME
+  outputs = inputs@{ nixpkgs, ... }: {
+    nixosConfigurations = {
+      hyprcube =
+        # CHANGEME: This should match the 'hostname' in your variables.nix file
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           modules = [
             {
-              # nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+              nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
               _module.args = { inherit inputs; };
             }
-            # nur.nixosModules.nur
-            inputs.nixos-hardware.nixosModules.common-gpu-amd
+            inputs.nixos-hardware.nixosModules.common-gpu-amd # CHANGEME: check https://github.com/NixOS/nixos-hardware
             inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { inherit inputs; };
-            }
-            ./hosts/hyprcube/configuration.nix
+            inputs.stylix.nixosModules.stylix
+            ./hosts/hyprcube/configuration.nix # CHANGEME: change the path to match your host folder
           ];
         };
-      };
     };
+  };
 }

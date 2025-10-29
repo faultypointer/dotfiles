@@ -1,25 +1,34 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, config, ... }: {
 
   imports = [
+    # Mostly user-specific configuration
     ./variables.nix
 
     # Programs
     ../../home/programs/kitty
+    ../../home/programs/nvim
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/btop
+    ../../home/programs/spicetify
+    ../../home/programs/nextcloud
+    ../../home/programs/thunar
+    ../../home/programs/lazygit
+    ../../home/programs/zen
+    ../../home/programs/duckduckgo-colorscheme
+    ../../home/programs/discord
+    ../../home/programs/tailscale
     ../../home/programs/firefox
-    ../../home/programs/direnv
-    ../../home/programs/nvim
 
     # Scripts
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    ../../home/system/gtk
-    ../../home/system/wlogout
+    ../../home/system/hypridle
+    ../../home/system/hyprlock
+    ../../home/system/hyprpanel
+    ../../home/system/hyprpaper
     ../../home/system/wofi
     ../../home/system/batsignal
     ../../home/system/zathura
@@ -31,25 +40,34 @@
 
   home = {
     inherit (config.var) username;
-    inherit (config.var) homeDirectory;
+    homeDirectory = "/home/" + config.var.username;
 
     packages = with pkgs; [
       # Apps
-      discord
-      signal-desktop
-      xfce.thunar
-      vlc
-      webtorrent_desktop
-      epr
+      bitwarden # Password manager
+      vlc # Video player
+      blanket # White-noise app
+      obsidian # Note taking app
+      planify # Todolists
+      gnome-calendar # Calendar
+      textpieces # Manipulate texts
+      curtail # Compress images
+
+      # Dev
+      go
+      nodejs
+      python3
+      jq
+      just
+      pnpm
 
       # Utils
       zip
       unzip
-      glow
       optipng
       pfetch
-      pandoc
-      tiv
+      btop
+      fastfetch
 
       # Just cool
       peaclock
@@ -57,45 +75,16 @@
       pipes
       cmatrix
 
-      neovide
-      zed-editor
-      nixd
-      c3-lsp
-      rust-analyzer
-      clang-tools
-      markdown-oxide
-
-      # typst
-      # typstyle
-      # typst-lsp
-      # typst-live
-
-      dbgate
+      # Backup
+      vscode
     ];
 
-    # Import wallpapers into $HOME/wallpapers
-    file."wallpapers" = {
-      recursive = true;
-      source = ../../home/wallpapers;
-    };
-
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".profile_picture.png" = { source = ./hikaru.jpg; };
+    file.".face.icon" = { source = ./profile_picture.png; };
 
     # Don't touch this
-    stateVersion = "25.05";
+    stateVersion = "24.05";
   };
-
-  # services.flameshot = {
-  #   enable = true;
-  #   settings = {
-  #     General = {
-  #       savePath = "/home/faulty/Pictures/screenshots/";
-  #       savePathFixed = true;
-  #       uiColor = "#" + config.var.theme.colors.accent;
-  #     };
-  #   };
-  # };
 
   programs.home-manager.enable = true;
 }

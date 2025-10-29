@@ -1,4 +1,14 @@
-{ config, pkgs, ... }: {
+# Wofi is a launcher for Wayland, inspired by rofi.
+{ config, pkgs, lib, ... }:
+let
+  accent = "#${config.lib.stylix.colors.base0D}";
+  background = "#${config.lib.stylix.colors.base00}";
+  background-alt = "#${config.lib.stylix.colors.base01}";
+  foreground = "#${config.lib.stylix.colors.base05}";
+  font = config.stylix.fonts.serif.name;
+  rounding = config.theme.rounding;
+  font-size = config.stylix.fonts.sizes.popups;
+in {
 
   home.packages = with pkgs; [ wofi-emoji ];
 
@@ -33,66 +43,67 @@
       key_exit = "Escape";
     };
 
-    style = ''
-      /** ********** Fonts ********** **/
+    style = lib.mkForce
+      # css
+      ''
+        * {
+          font-family: "${font}";
+          font-weight: 500;
+          font-size: ${toString font-size}px;
+        }
 
-      * {
-        font-family: "${config.var.theme.font}";
-        font-weight: 500;
-        font-size: ${toString config.var.theme.font-size}px;
-      }
+        #window {
+          background-color: ${background};
+          color: ${foreground};
+          border-radius: ${toString rounding}px;
+        }
 
-      #window {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
-        border-radius: ${toString config.var.theme.rounding}px;
-      }
+        #outer-box {
+          padding: 20px;
+        }
 
-      #outer-box {
-        padding: 20px;
-      }
+        #input {
+          background-color: ${background-alt};
+          border: 0px solid ${accent};
+          color: ${foreground};
+          padding: 8px 12px;
+        }
 
-      #input {
-        background-color: #${config.var.theme.colors.bg};
-        border: 0px solid #${config.var.theme.colors.accent};
-        padding: 8px 12px;
-      }
+        #scroll {
+          margin-top: 20px;
+        }
 
-      #scroll {
-        margin-top: 20px;
-      }
+        #inner-box {}
 
-      #inner-box {}
+        #img {
+          padding-right: 8px;
+        }
 
-      #img {
-        padding-right: 8px;
-      }
+        #text {
+          color: ${foreground};
+        }
 
-      #text {
-        color: #${config.var.theme.colors.c7};
-      }
+        #text:selected {
+          color: ${foreground};
+        }
 
-      #text:selected {
-        color: #${config.var.theme.colors.fg};
-      }
+        #entry {
+          padding: 6px;
+        }
 
-      #entry {
-        padding: 6px;
-      }
+        #entry:selected {
+          background-color: ${accent};
+          color: ${foreground};
+        }
 
-      #entry:selected {
-        background-color: #${config.var.theme.colors.accent};
-        color: #${config.var.theme.colors.accentFg};
-      }
+        #unselected {}
 
-      #unselected {}
+        #selected {}
 
-      #selected {}
-
-      #input,
-      #entry:selected {
-        border-radius: ${toString config.var.theme.rounding}px;
-      }
-    '';
+        #input,
+        #entry:selected {
+          border-radius: ${toString rounding}px;
+        }
+      '';
   };
 }

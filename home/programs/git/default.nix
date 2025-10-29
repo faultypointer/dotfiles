@@ -1,12 +1,12 @@
-{ config, ... }: {
+{ config, ... }:
+let
+  username = config.var.git.username;
+  email = config.var.git.email;
+in {
   programs.git = {
     enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      push.autoSetupRemote = true;
-      user.name = config.var.git.username;
-      user.email = config.var.git.email;
-    };
+    userName = username;
+    userEmail = email;
     ignores = [
       ".cache/"
       ".DS_Store"
@@ -19,6 +19,11 @@
       "result"
       "result-*"
     ];
+    extraConfig = {
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      color.ui = "1";
+    };
     aliases = {
       essa = "push --force";
       co = "checkout";

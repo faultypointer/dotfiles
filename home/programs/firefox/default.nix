@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, ... }: {
+{ pkgs, inputs, ... }: {
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-beta-unwrapped {

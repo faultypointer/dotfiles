@@ -4,6 +4,7 @@
     lsp = {
       enable = true;
       servers = {
+        asm_lsp.enable = true;
         bashls.enable = true;
         gopls.enable = true;
         ts_ls.enable = true;

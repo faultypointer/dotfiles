@@ -54,6 +54,9 @@
       textpieces # Manipulate texts
       curtail # Compress images
 
+      gearlever
+      appimage-run
+
       # Utils
       zip
       unzip

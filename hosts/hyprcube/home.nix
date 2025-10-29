@@ -11,10 +11,10 @@
     ../../home/programs/fetch
     ../../home/programs/git
     ../../home/programs/spicetify
-    ../../home/programs/nextcloud
+    # ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
-    ../../home/programs/zen
+    # ../../home/programs/zen
     ../../home/programs/duckduckgo-colorscheme
     ../../home/programs/discord
     ../../home/programs/tailscale
@@ -44,22 +44,15 @@
 
     packages = with pkgs; [
       # Apps
-      bitwarden # Password manager
+      # bitwarden # Password manager
       vlc # Video player
+      mpv
       blanket # White-noise app
       obsidian # Note taking app
-      planify # Todolists
-      gnome-calendar # Calendar
+      # planify # Todolists
+      # gnome-calendar # Calendar
       textpieces # Manipulate texts
       curtail # Compress images
-
-      # Dev
-      go
-      nodejs
-      python3
-      jq
-      just
-      pnpm
 
       # Utils
       zip
@@ -75,12 +68,10 @@
       pipes
       cmatrix
 
-      # Backup
-      vscode
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".face.icon" = { source = ./profile_picture.png; };
+    file.".face.icon" = { source = ./profile_picture.jpg; };
 
     # Don't touch this
     stateVersion = "24.05";

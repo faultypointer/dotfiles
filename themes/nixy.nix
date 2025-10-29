@@ -3,14 +3,14 @@
   options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
-      rounding = 12;
-      gaps-in = 12;
-      gaps-out = 12 * 2;
+      rounding = 10;
+      gaps-in = 2;
+      gaps-out = 2 * 2;
       active-opacity = 0.96;
       inactive-opacity = 0.95;
       blur = true;
-      border-size = 4;
-      animation-speed = "medium"; # "fast" | "medium" | "slow"
+      border-size = 1;
+      animation-speed = "fast"; # "fast" | "medium" | "slow"
       fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
 
       bar = { # Hyprpanel
@@ -87,11 +87,7 @@
       };
 
       polarity = "dark";
-      image = pkgs.fetchurl {
-        url =
-          "https://raw.githubusercontent.com/Keyitdev/sddm-astronaut-theme/refs/heads/master/Backgrounds/pixel_sakura_static.png";
-        sha256 = "sha256-y6AJu7RXnI5vPLPVts6tflb9XukDkgiL+J6vUPj4lbs=";
-      };
+      image = ../home/wallpapers/tshd.jpg;
     };
   };
 

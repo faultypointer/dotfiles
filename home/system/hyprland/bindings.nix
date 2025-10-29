@@ -3,8 +3,7 @@
     bind = [
       "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
       "$mod,E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-      "$mod,B, exec, zen" # Zen Browser
-      "$mod,K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
+      "$mod,B, exec, firefox" # Zen Browser
       "$mod,L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
       "$mod,X, exec, powermenu" # Powermenu
       "$mod,SPACE, exec, menu" # Launcher
@@ -12,7 +11,7 @@
       "$shiftMod,SPACE, exec, hyprfocus-toggle" # Toggle HyprFocus
       "$mod,P, exec, ${pkgs.planify}/bin/io.github.alainm23.planify" # Planify
 
-      "$mod,Q, killactive," # Close window
+      "$mod,Backspace, killactive," # Close window
       "$mod,T, togglefloating," # Toggle Floating
       "$mod,F, fullscreen" # Toggle Fullscreen
       "$mod,left, movefocus, l" # Move focus left
@@ -24,10 +23,10 @@
       "$shiftMod,left, layoutmsg, addmaster" # Add to master
       "$shiftMod,right, layoutmsg, removemaster" # Remove from master
 
-      "$mod,PRINT, exec, screenshot region" # Screenshot region
+      "$mod,S, exec, screenshot region" # Screenshot region
       ",PRINT, exec, screenshot monitor" # Screenshot monitor
-      "$shiftMod,PRINT, exec, screenshot window" # Screenshot window
-      "ALT,PRINT, exec, screenshot region swappy" # Screenshot region then edit
+      "$shiftMod,S, exec, screenshot window" # Screenshot window
+      "ALT,S, exec, screenshot region swappy" # Screenshot region then edit
 
       "$shiftMod,T, exec, hyprpanel-toggle" # Toggle hyprpanel
       "$shiftMod,C, exec, clipboard" # Clipboard picker with wofi

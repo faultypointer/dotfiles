@@ -20,7 +20,7 @@ in {
 
       mkdnflow = {
         enable = true;
-        mappings = {
+        settings.mappings = {
 
         };
 

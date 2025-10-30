@@ -53,7 +53,7 @@ in {
         enable = true;
         modules = { conceal = false; };
         toDo.symbols = [ " " "-" "x" "!" "/" ];
-        mappings = {
+        settings.mappings = {
           MkdnCreateLink = false;
           MkdnCreateLinkFromClipboard = {
             key = "<leader>ml";

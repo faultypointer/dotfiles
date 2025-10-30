@@ -84,8 +84,10 @@ in {
     curl
   ];
 
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  systemd.settings.Manager = {
+    KExecWatchdogSec = "5min";
+    RebootWatchdogSec = "10min";
+    RuntimeWatchdogSec = "30s";
+    WatchdogDevice = "/dev/watchdog";
+  };
 }

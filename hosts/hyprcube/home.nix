@@ -49,6 +49,7 @@
       mpv
       blanket # White-noise app
       obsidian # Note taking app
+      signal-desktop
       # planify # Todolists
       # gnome-calendar # Calendar
       textpieces # Manipulate texts

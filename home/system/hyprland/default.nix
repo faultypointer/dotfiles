@@ -11,14 +11,13 @@ let
   keyboardLayout = config.var.keyboardLayout;
 in {
 
-  imports =
-    [ ./animations.nix ./bindings.nix ./polkitagent.nix ./hyprspace.nix ];
+  imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
 
   home.packages = with pkgs; [
     qt5.qtwayland
     qt6.qtwayland
     libsForQt5.qt5ct
-    qt6ct
+    qt6Packages.qt6ct
     hyprshot
     hyprpicker
     swappy
@@ -44,6 +43,9 @@ in {
     # withUWSM = true; # One day, but not today
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
+    extraConfig = ''
+      gesture = 3, horizontal, workspace
+    '';
     settings = {
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
@@ -120,8 +122,6 @@ in {
         allow_small_split = true;
         mfact = 0.5;
       };
-
-      gestures = { workspace_swipe = true; };
 
       misc = {
         vfr = true;

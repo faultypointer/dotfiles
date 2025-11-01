@@ -50,7 +50,7 @@ in {
     EDITOR = "nvim";
     TERMINAL = "kitty";
     TERM = "kitty";
-    BROWSER = "zen";
+    BROWSER = "firefox";
   };
 
   services.libinput.enable = true;

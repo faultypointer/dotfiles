@@ -8,6 +8,7 @@
     ../../home/programs/kitty
     ../../home/programs/nvim
     ../../home/programs/shell
+    ../../home/programs/direnv
     ../../home/programs/fetch
     ../../home/programs/git
     ../../home/programs/spicetify

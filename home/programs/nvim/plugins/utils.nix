@@ -5,6 +5,7 @@
       FloatBorder.fg = "#${config.lib.stylix.colors.base0D}";
     };
     plugins = {
+      direnv.enable = true;
       copilot-vim.enable = true;
       flash.enable = true;
       tmux-navigator.enable = true;

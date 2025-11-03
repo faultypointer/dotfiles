@@ -82,7 +82,15 @@ in {
     xdg-utils
     wget
     curl
+
+    man-pages
+    man-pages-posix
   ];
+
+  documentation.man = {
+    man-db.enable = false;
+    mandoc.enable = true;
+  };
 
   systemd.settings.Manager = {
     KExecWatchdogSec = "5min";

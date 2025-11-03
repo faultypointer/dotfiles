@@ -48,6 +48,7 @@
       # bitwarden # Password manager
       vlc # Video player
       mpv
+      webtorrent_desktop
       blanket # White-noise app
       obsidian # Note taking app
       signal-desktop

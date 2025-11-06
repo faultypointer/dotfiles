@@ -1,5 +1,23 @@
 {
   programs.nixvim = {
+    extraConfigLua = ''
+            -- Show diagnostics on hover (together with docs)
+      local timer = vim.uv.new_timer()
+          vim.api.nvim_create_autocmd("CursorHold", {
+            callback = function()
+              timer:stop()
+              timer:start(100, 0, function()
+                vim.schedule(function()
+                  vim.diagnostic.open_float(nil, {
+                    focusable = false,
+                    border = "rounded",
+                    scope = "cursor",
+                  })
+                end)
+              end)
+            end,
+          })
+    '';
     globals.mapleader = " ";
     opts = {
       autoindent = true;
@@ -22,6 +40,8 @@
 
       # Keep visual indentation on wrapped lines
       breakindent = true;
+
+      updatetime = 150;
 
       # Hide command line unless needed
       cmdheight = 0;

@@ -12,6 +12,7 @@
     ../../nixos/users.nix
     ../../nixos/utils.nix
     # ../../nixos/docker.nix
+    ../../nixos/podman.nix
     ../../nixos/tailscale.nix
 
     # You should let those lines as is

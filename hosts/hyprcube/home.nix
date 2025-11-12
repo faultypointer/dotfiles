@@ -48,10 +48,11 @@
       # bitwarden # Password manager
       vlc # Video player
       mpv
-      webtorrent_desktop
+      qbittorrent
       blanket # White-noise app
       obsidian # Note taking app
       signal-desktop
+      yacreader
       # planify # Todolists
       # gnome-calendar # Calendar
       textpieces # Manipulate texts

@@ -48,3 +48,6 @@ opacity = 1
 [window.padding]
 x = 10
 y = 5
+
+[shell]
+program = "/usr/bin/fish"

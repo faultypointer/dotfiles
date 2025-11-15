@@ -15,3 +15,4 @@ eval "$(zoxide init bash)"
 
 
 . "$HOME/.cargo/env"
+export PATH="$PATH:/home/faulty/.emacs.d/bin/"

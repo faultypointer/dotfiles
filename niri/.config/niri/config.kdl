@@ -76,12 +76,29 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+  opacity 0.90;
+}
+
+
+window-rule {
+  match app-id=r#"Emacs"#
+  opacity 0.95;
+}
+
+
+window-rule {
+    match app-id=r#"firefox$"#
+    opacity 1.0;
+}
+
 switch-events { 
   lid-close { spawn "dms" "ipc" "call" "lock" "lock"; } 
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+E hotkey-overlay-title="Open Editor: emacsclient" { spawn "/usr/bin/emacsclient" "--create-frame"; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
 

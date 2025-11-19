@@ -92,6 +92,12 @@ window-rule {
     opacity 1.0;
 }
 
+window-rule {
+    match app-id=r#"gimp$"#
+    opacity 1.0;
+}
+
+
 switch-events { 
   lid-close { spawn "dms" "ipc" "call" "lock" "lock"; } 
 }

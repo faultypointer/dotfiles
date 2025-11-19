@@ -6,6 +6,19 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
+    config = function()
+      require('render-markdown').setup {
+          latex = {
+              enabled = true,
+              render_modes = true,
+              position = 'above',
+              converter = {'utftex'},
+              highlight = 'RenderMarkdownMath',
+              top_pad = 0,
+              bottom_pad = 0,
+            }, 
+        }
+    end
   },
 
   {
@@ -35,7 +48,7 @@ return {
     },
     config = function()
       require("nvim-treesitter.configs").setup {
-        ensure_installed = { "lua", "vimdoc", "rust", "go", "json", "toml", "markdown", "typst" },
+        ensure_installed = { "lua", "vimdoc", "latex", "rust", "go", "json", "toml", "markdown", "typst" },
         highlight = {
           enable = true,
           use_languagetree = true,

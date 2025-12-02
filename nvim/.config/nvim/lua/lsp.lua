@@ -214,4 +214,30 @@ vim.lsp.config.asm_lsp = {
   filetypes = { "asm", "nasm" },
 }
 
-  vim.lsp.enable({ 'lua_ls', 'nixd', 'nil_ls', 'tinymist', 'harper_ls', 'clangd', 'asm_lsp' })
+vim.lsp.config.rust_analyzer = {
+  cmd = { "rust-analyzer" },
+  filetypes = { "rust" },
+  root_markers = { "Cargo.toml", "rust-project.json", ".git" },
+
+  -- Integrate with your existing capabilities variable
+  capabilities = capabilities,
+
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+      inlayHints = {
+        lifetimeElisionHints = { enable = true },
+        closureReturnTypeHints = { enable = "always" },
+        parameterHints = true,
+        typeHints = true,
+      },
+    },
+  },
+}
+
+vim.lsp.enable({ 'lua_ls', 'rust_analyzer', 'nixd', 'nil_ls', 'tinymist', 'harper_ls', 'clangd', 'asm_lsp' })

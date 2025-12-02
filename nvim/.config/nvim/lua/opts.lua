@@ -45,9 +45,9 @@ opts.final = function()
   opt.scrolloff = 2
 
   -- Indenting
-  opt.shiftwidth = 2
+  opt.shiftwidth = 4
   opt.smartindent = true
-  opt.tabstop = 2
+  opt.tabstop = 4
   opt.expandtab = true
   opt.softtabstop = 2
   opt.sidescrolloff = 2

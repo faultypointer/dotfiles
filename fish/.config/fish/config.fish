@@ -1,6 +1,7 @@
 # --- Aliases ---
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias vim="emacsclient -t"
 
 # --- Starship ---
 starship init fish | source
@@ -9,13 +10,5 @@ starship init fish | source
 zoxide init fish | source
 
 # --- Cargo ---
-# If env.fish exists:
-if test -e ~/.cargo/env.fish
-    source ~/.cargo/env.fish
-else
-    set -Ux PATH $PATH ~/.cargo/bin
-end
-
-# --- Extra PATH additions ---
-set -Ux PATH $PATH /home/faulty/.emacs.d/bin/
-
+fish_add_path ~/.cargo/bin
+fish_add_path ~/.emacs.d/bin

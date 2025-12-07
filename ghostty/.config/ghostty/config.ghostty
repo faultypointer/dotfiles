@@ -1,0 +1,9 @@
+font-family = "Iosevka"
+window-decoration = none
+quick-terminal-position = right
+quick-terminal-size = 40%
+
+
+# keybinds
+keybind = global:shift+`=toggle_quick_terminal
+keybind = ctrl+t>t=toggle_window_decorations

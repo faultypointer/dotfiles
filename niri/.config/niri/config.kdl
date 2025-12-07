@@ -106,7 +106,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+E hotkey-overlay-title="Open Editor: emacsclient" { spawn "/usr/bin/emacsclient" "--create-frame"; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

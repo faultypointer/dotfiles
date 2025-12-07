@@ -28,13 +28,13 @@ style = "Beam"
 [font]
 size = 11.0
 [font.bold]
-family = "FantasqueSansM Nerd Font Propo"
+family = "Iosevka"
 
 [font.italic]
-family = "FantasqueSansM Nerd Font Propo"
+family = "Iosevka, Extralight Italic"
 
 [font.normal]
-family = "FantasqueSansM Nerd Font Propo"
+family = "Iosevka"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"

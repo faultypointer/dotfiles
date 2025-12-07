@@ -5,5 +5,5 @@ quick-terminal-size = 40%
 
 
 # keybinds
-keybind = global:shift+`=toggle_quick_terminal
+keybind = global:alt+`=toggle_quick_terminal
 keybind = ctrl+t>t=toggle_window_decorations

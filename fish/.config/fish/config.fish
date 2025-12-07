@@ -2,6 +2,7 @@
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias vim="emacsclient -t"
+alias ca=cargo
 
 # --- Starship ---
 starship init fish | source

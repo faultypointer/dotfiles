@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:vim
+SETUVAR --export EDITOR:nvim
 SETUVAR --export --path PATH:/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/faulty/\x2eemacs\x2ed/bin/
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack
@@ -39,4 +39,4 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/faulty/bin\x1e/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin

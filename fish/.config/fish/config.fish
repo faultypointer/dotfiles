@@ -13,5 +13,6 @@ zoxide init fish | source
 # --- Cargo ---
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.emacs.d/bin
+fish_add_path ~/bin
 
-set -Ux EDITOR vim
+set -Ux EDITOR nvim

@@ -230,6 +230,9 @@ vim.lsp.config.rust_analyzer = {
       checkOnSave = {
         command = "clippy",
       },
+      formatOnSave = {
+          command = "fmt",
+      },
       inlayHints = {
         lifetimeElisionHints = { enable = true },
         closureReturnTypeHints = { enable = "always" },

@@ -3,6 +3,7 @@ foreground = #f1dfdb
 cursor-color = #ffb4a4
 selection-background = #733427
 selection-foreground = #f1dfdb
+
 palette = 0=#1a110f
 palette = 1=#e14984
 palette = 2=#9bd66e

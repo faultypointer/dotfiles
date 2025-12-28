@@ -243,4 +243,12 @@ vim.lsp.config.rust_analyzer = {
   },
 }
 
-vim.lsp.enable({ 'lua_ls', 'rust_analyzer', 'nixd', 'nil_ls', 'tinymist', 'harper_ls', 'clangd', 'asm_lsp' })
+vim.lsp.config.idris_lsp = {
+    cmd = { "idris2-lsp" },
+    filetypes = { "idr" },
+    root_markers = { "pack.toml", vim.uv.cwd() }
+}
+
+vim.lsp.enable({ 'lua_ls', 'rust_analyzer', 'idris_lsp', 'nixd', 'nil_ls', 'tinymist', 'harper_ls', 'clangd', 'asm_lsp' })
+
+

@@ -39,4 +39,4 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/faulty/bin\x1e/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/faulty/go/bin\x1e/home/faulty/\x2econfig/herd\x2dlite/bin\x1e/home/faulty/\x2elocal/bin\x1e/home/faulty/bin\x1e/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin

@@ -1,7 +1,7 @@
 # --- Aliases ---
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias vim="helix"
+alias vim="hx"
 alias ca=cargo
 alias car="ca r"
 alias ccc="clang -Wall -Wextra -Werror -std=c23"
@@ -24,3 +24,5 @@ set -Ux EDITOR nvim
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
 set -gx PATH $HOME/.cabal/bin $PATH /home/faulty/.ghcup/bin # ghcup-env
+
+direnv hook fish | source

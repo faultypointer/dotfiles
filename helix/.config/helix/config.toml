@@ -2,3 +2,6 @@ theme = "gruvbox_dark_hard"
 
 [editor]
 default-yank-register = "+"
+
+[editor.soft-wrap]
+enable = true

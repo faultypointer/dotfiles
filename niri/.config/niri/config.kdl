@@ -20,6 +20,8 @@ input {
     focus-follows-mouse
 }
 
+prefer-no-csd
+
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
     // off

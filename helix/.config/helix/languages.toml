@@ -31,8 +31,8 @@ name = "c"
 scope = "source.c"
 file-types = ["c", "h"]
 roots = ["compile_commands.json", ".git"]
+language-servers = ["clangd"]
 auto-format = true
-comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
 
 [language-server.clangd]
@@ -42,6 +42,5 @@ args = [
   "--clang-tidy",
   "--completion-style=detailed",
   "--header-insertion=iwyu",
-  "--suggest-missing-includes",
   "--pch-storage=memory",
 ]

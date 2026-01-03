@@ -1,7 +1,7 @@
 # --- Aliases ---
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias vim="hx"
+alias vim="helix"
 alias ca=cargo
 alias car="ca r"
 alias ccc="clang -Wall -Wextra -Werror -std=c23"

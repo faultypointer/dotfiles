@@ -45,4 +45,12 @@ args = [
   "--pch-storage=memory",
 ]
 
+[language-server.zk]
+command = "zk"
+args = ["lsp"]
+
+[[language]]
+name = "markdown"
+roots = [".zk"]
+language-servers = ["zk"]
 

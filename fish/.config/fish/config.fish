@@ -12,7 +12,7 @@ alias gipl="git pull"
 alias gico="git checkout"
 alias gira="git remote add"
 # others
-alias download_torrent="webtorrent '$(wl-paste)'"
+# alias download_torrent="webtorrent '$(wl-paste)'"
 
 # --- Starship ---
 starship init fish | source

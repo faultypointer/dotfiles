@@ -56,4 +56,4 @@ language-servers = ["zk"]
 
 
 [language-server.tinymist]
-config.exportPdf = "onSave"
+# config.exportPdf = "onSave"

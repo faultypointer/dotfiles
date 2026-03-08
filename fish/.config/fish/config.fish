@@ -27,7 +27,7 @@ fish_add_path ~/.emacs.d/bin
 fish_add_path ~/bin
 fish_add_path ~/.local/bin
 fish_add_path ~/.config/herd-lite/bin/
-
+fish_add_path ~/Desktop/odin
 set -Ux EDITOR vim
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME

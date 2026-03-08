@@ -3,4 +3,4 @@
 SETUVAR --export EDITOR:vim
 SETUVAR --export --path PATH:/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/faulty/\x2eemacs\x2ed/bin/
 SETUVAR __fish_initialized:4300
-SETUVAR fish_user_paths:/home/faulty/go/bin\x1e/home/faulty/\x2econfig/herd\x2dlite/bin\x1e/home/faulty/\x2elocal/bin\x1e/home/faulty/bin\x1e/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/faulty/Desktop/odin\x1e/home/faulty/go/bin\x1e/home/faulty/\x2econfig/herd\x2dlite/bin\x1e/home/faulty/\x2elocal/bin\x1e/home/faulty/bin\x1e/home/faulty/\x2eemacs\x2ed/bin\x1e/home/faulty/\x2ecargo/bin

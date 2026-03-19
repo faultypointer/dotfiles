@@ -115,7 +115,7 @@ switch-events {
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+E hotkey-overlay-title="Open Editor: emacsclient" { spawn "/usr/bin/emacsclient" "--create-frame"; }
+    Mod+E hotkey-overlay-title="Open Editor: emacsclient" { spawn "emacsclient" "--create-frame"; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
 

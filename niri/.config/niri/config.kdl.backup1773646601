@@ -67,7 +67,6 @@ layout {
 }
 spawn-at-startup "waybar"
 spawn-at-startup "wl-paste --watch cliphist store"
-// spawn-at-startup "emacs --daemon"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
@@ -88,7 +87,6 @@ window-rule {
 window-rule {
   match app-id=r#"Emacs"#
   opacity 0.95;
-  // open-floating true
 }
 
 
@@ -358,5 +356,3 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
-
-include "dms/windowrules.kdl"

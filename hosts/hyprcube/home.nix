@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   imports = [
     # Mostly user-specific configuration
@@ -52,7 +53,7 @@
       blanket # White-noise app
       obsidian # Note taking app
       signal-desktop
-      yacreader
+      # yacreader
       # planify # Todolists
       # gnome-calendar # Calendar
       textpieces # Manipulate texts
@@ -78,7 +79,9 @@
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".face.icon" = { source = ./profile_picture.jpg; };
+    file.".face.icon" = {
+      source = ./profile_picture.jpg;
+    };
 
     # Don't touch this
     stateVersion = "24.05";

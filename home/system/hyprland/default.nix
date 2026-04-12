@@ -1,5 +1,10 @@
 # So best window tiling manager
-{ pkgs, config, inputs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 let
   border-size = config.theme.border-size;
   gaps-in = config.theme.gaps-in;
@@ -9,9 +14,14 @@ let
   rounding = config.theme.rounding;
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
-in {
+in
+{
 
-  imports = [ ./animations.nix ./bindings.nix ./polkitagent.nix ];
+  imports = [
+    ./animations.nix
+    ./bindings.nix
+    ./polkitagent.nix
+  ];
 
   home.packages = with pkgs; [
     qt5.qtwayland
@@ -123,18 +133,34 @@ in {
       };
 
       misc = {
-        vfr = true;
+        # vfr = true;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
         focus_on_activate = true;
-        new_window_takes_over_fullscreen = 2;
+        on_focus_under_fullscreen = 2;
       };
 
-      windowrulev2 =
-        [ "float, tag:modal" "pin, tag:modal" "center, tag:modal" ];
+      # windowrule = [
+      #   "float, tag:modal"
+      #   "pin, tag:modal"
+      #   "center, tag:modal"
+      # ];
 
-      layerrule = [ "noanim, launcher" "noanim, ^ags-.*" ];
+      layerrule = [
+        {
+          name = "no_anim_for_launcher";
+
+          no_anim = true;
+          match.namespace = "launcher";
+        }
+        {
+          name = "no_anim_for_ags";
+
+          no_anim = true;
+          match.namespace = "^agi-.*";
+        }
+      ];
 
       input = {
         kb_layout = keyboardLayout;

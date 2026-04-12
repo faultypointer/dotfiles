@@ -52,8 +52,10 @@ in
     # withUWSM = true; # One day, but not today
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
+    # TODO: scrolling
     extraConfig = ''
       gesture = 3, horizontal, workspace
+      workspace = 1, layoutopt:direction:right
     '';
     settings = {
       "$mod" = "SUPER";

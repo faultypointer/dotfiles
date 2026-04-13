@@ -40,13 +40,15 @@
     homeDirectory = "/home/" + config.var.username;
 
     packages = with pkgs; [
-      vlc 
+      vlc
       mpv
       qbittorrent
       signal-desktop
 
       gearlever
       appimage-run
+
+      typst
 
       # Utils
       zip

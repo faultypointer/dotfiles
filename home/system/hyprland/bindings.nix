@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$mod,RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
@@ -11,6 +12,7 @@
       "$mod,P, exec, ${pkgs.planify}/bin/io.github.alainm23.planify" # Planify
 
       "$mod,Backspace, killactive," # Close window
+      "$mod, Q, killactive"
       "$mod,T, togglefloating," # Toggle Floating
       "$mod,F, fullscreen" # Toggle Fullscreen
       "$mod,left, movefocus, l" # Move focus left
@@ -32,12 +34,19 @@
       "$shiftMod,E, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji" # Emoji picker with wofi
       "$mod,F2, exec, night-shift" # Toggle night shift
       "$mod,F3, exec, night-shift" # Toggle night shift
-    ] ++ (builtins.concatLists (builtins.genList (i:
-      let ws = i + 1;
-      in [
-        "$mod,code:1${toString i}, workspace, ${toString ws}"
-        "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
-      ]) 9));
+    ]
+    ++ (builtins.concatLists (
+      builtins.genList (
+        i:
+        let
+          ws = i + 1;
+        in
+        [
+          "$mod,code:1${toString i}, workspace, ${toString ws}"
+          "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
+        ]
+      ) 9
+    ));
 
     bindm = [
       "$mod,mouse:272, movewindow" # Move Window (mouse)

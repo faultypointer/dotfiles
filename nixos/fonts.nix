@@ -19,6 +19,7 @@
       nerd-fonts.meslo-lg
       openmoji-color
       twemoji-color-font
+      fantasque-sans-mono
     ];
 
     enableDefaultPackages = false;

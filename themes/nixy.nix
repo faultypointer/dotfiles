@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -32,10 +31,8 @@
 
   config = {
     stylix = {
-      # targets.firefox.profileNames = [ "faulty" ];
       enable = true;
 
-      # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
       base16Scheme = {
         base00 = "0c0e0f"; # Default Background
         base01 = "202324"; # Lighter Background (Used for status bars, line number and folding marks)
@@ -63,16 +60,16 @@
 
       fonts = {
         monospace = {
-          package = pkgs.nerd-fonts.jetbrains-mono;
-          name = "JetBrains Mono Nerd Font";
+          package = pkgs.nerd-fonts.fantasque-sans-mono;
+          name = "Fantasque Sans Mono";
         };
         sansSerif = {
-          package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
-          name = "SFProDisplay Nerd Font";
+          package = pkgs.nerd-fonts.fantasque-sans-mono;
+          name = "Fantasque Sans Mono";
         };
         serif = {
-          package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
-          name = "SFProDisplay Nerd Font";
+          package = pkgs.nerd-fonts.fantasque-sans-mono;
+          name = "Fantasque Sans Mono";
         };
         emoji = {
           package = pkgs.noto-fonts-color-emoji;

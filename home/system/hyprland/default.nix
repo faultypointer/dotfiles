@@ -150,6 +150,16 @@ in
       #   "center, tag:modal"
       # ];
 
+      windowrule = [
+        {
+          name = "floating signal";
+          match.class = "signal";
+          float = "on";
+          center = "on";
+          size = "(monitor_w*0.5) (monitor_h*0.7)";
+        }
+      ];
+
       layerrule = [
         {
           name = "no_anim_for_launcher";

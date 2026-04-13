@@ -1,11 +1,14 @@
 # Hikaru
 
-My personal nixos config based on [Nixy](https://github.com/anotherhadi/nixy).
+My personal NixOS config based on [Nixy](https://github.com/anotherhadi/nixy).
 
-## Todos
+## Looks
 
-- [ ] Replace neovim by helix
-- [ ] Go through the entire config and remove unnecesary stuff
-- [ ] and add necessary stuff
+### Terminals
+![Glorious Terminal](./res/terminal.png)
 
+### Terminals 2: Helix and Lazygit
+![Helix Editor and Lazygit](./res/editor.png)
 
+### Firefox and Thunar
+![Firefox and Thunar](./res/browserandfile.png)

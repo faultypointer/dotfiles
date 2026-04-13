@@ -23,18 +23,17 @@
     inputs@{ nixpkgs, ... }:
     {
       nixosConfigurations = {
-        hyprcube =
-          nixpkgs.lib.nixosSystem {
-            modules = [
-              {
-                _module.args = { inherit inputs; };
-              }
-              inputs.nixos-hardware.nixosModules.common-gpu-amd  # https://github.com/NixOS/nixos-hardwar
-              inputs.home-manager.nixosModules.home-manager
-              inputs.stylix.nixosModules.stylix
-              ./hosts/hyprcube/configuration.nix 
-            ];
-          };
+        hyprcube = nixpkgs.lib.nixosSystem {
+          modules = [
+            {
+              _module.args = { inherit inputs; };
+            }
+            inputs.nixos-hardware.nixosModules.common-gpu-amd # https://github.com/NixOS/nixos-hardwar
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            ./hosts/hyprcube/configuration.nix
+          ];
+        };
       };
     };
 }

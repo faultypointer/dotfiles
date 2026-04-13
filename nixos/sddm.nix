@@ -1,14 +1,23 @@
-{ pkgs, inputs, config, lib, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  lib,
+  ...
+}:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
-    themeConfig = if lib.hasSuffix "sakura_static.png" config.stylix.image then
-      { }
-    else {
-      Background = "${toString config.stylix.image}";
-    };
+    themeConfig =
+      if lib.hasSuffix "sakura_static.png" config.stylix.image then
+        { }
+      else
+        {
+          Background = "${toString config.stylix.image}";
+        };
   };
-in {
+in
+{
   services.displayManager = {
     sddm = {
       package = pkgs.kdePackages.sddm;
@@ -17,9 +26,7 @@ in {
       wayland.enable = true;
       theme = "sddm-astronaut-theme";
       settings = {
-        Wayland.SessionDir = "${
-            inputs.hyprland.packages."${pkgs.system}".hyprland
-          }/share/wayland-sessions";
+        Wayland.SessionDir = "${inputs.hyprland.packages."${pkgs.system}".hyprland}/share/wayland-sessions";
       };
     };
   };

@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, pkgs, ... }:
+{
   imports = [
     # Mostly system related configuration
     ../../nixos/audio.nix
@@ -21,7 +22,18 @@
   ];
 
   home-manager.users."${config.var.username}" = import ./home.nix;
-  environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
+
+  boot.kernelModules = [
+    "acer-wmi-battery"
+  ];
+  boot.extraModulePackages = [ pkgs.linuxPackages_latest.acer-wmi-battery ];
+  boot.extraModprobeConfig = ''
+    options acer-wmi-battery enable_health_mode=1
+  '';
 
   # Don't touch this
   system.stateVersion = "24.05";

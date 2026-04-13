@@ -64,6 +64,7 @@ in
       exec-once = [ "dbus-update-activation-environment --systemd --all" ];
 
       monitor = [
+        "eDP-1, 1920x1080@60.001,auto,1"
         "eDP-2,highres,0x0,1"
         "DP-7, disable"
         "DP-8, disable"

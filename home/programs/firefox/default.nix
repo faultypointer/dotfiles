@@ -29,7 +29,7 @@
     profiles = {
       default = {
         id = 0;
-        name = "faultypointer";
+        name = "faulty";
         isDefault = true;
 
         extensions.packages =

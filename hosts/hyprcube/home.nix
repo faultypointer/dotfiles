@@ -7,26 +7,20 @@
 
     # Programs
     ../../home/programs/kitty
-    # ../../home/programs/nvim
     ../../home/programs/helix
     ../../home/programs/shell
     ../../home/programs/direnv
-    ../../home/programs/fetch
     ../../home/programs/git
-    # ../../home/programs/spicetify
-    # ../../home/programs/nextcloud
     ../../home/programs/thunar
     ../../home/programs/lazygit
-    # ../../home/programs/zen
     ../../home/programs/duckduckgo-colorscheme
     ../../home/programs/discord
-    #../../home/programs/tailscale
     ../../home/programs/firefox
+    #../../home/programs/tailscale
 
     # Scripts
     ../../home/scripts # All scripts
 
-    # System (Desktop environment like stuff)
     ../../home/system/hyprland
     ../../home/system/hypridle
     ../../home/system/hyprlock
@@ -46,19 +40,10 @@
     homeDirectory = "/home/" + config.var.username;
 
     packages = with pkgs; [
-      # Apps
-      # bitwarden # Password manager
-      vlc # Video player
+      vlc 
       mpv
       qbittorrent
-      blanket # White-noise app
-      obsidian # Note taking app
       signal-desktop
-      # yacreader
-      # planify # Todolists
-      # gnome-calendar # Calendar
-      textpieces # Manipulate texts
-      curtail # Compress images
 
       gearlever
       appimage-run
@@ -67,21 +52,12 @@
       zip
       unzip
       optipng
-      pfetch
       btop
-      fastfetch
-
-      # Just cool
-      peaclock
-      cbonsai
-      pipes
-      cmatrix
-
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
     file.".face.icon" = {
-      source = ./profile_picture.jpg;
+      source = ./hikaru.png;
     };
 
     # Don't touch this

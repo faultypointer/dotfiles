@@ -1,6 +1,5 @@
 {
   imports = [
-    ./nixy
     ./sounds
     ./brightness
     ./caffeine
@@ -11,6 +10,5 @@
     ./nerdfont-fzf
     ./notification
     ./system
-    ./openvpn
   ];
 }

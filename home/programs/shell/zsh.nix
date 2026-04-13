@@ -62,7 +62,7 @@ in {
     };
 
     shellAliases = {
-      vim = "nvim";
+      vim = "hx";
       vi = "nvim";
       v = "nvim";
       c = "clear";

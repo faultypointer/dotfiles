@@ -21,6 +21,7 @@ in
     ./animations.nix
     ./bindings.nix
     ./polkitagent.nix
+    # ./hyprspace.nix
   ];
 
   home.packages = with pkgs; [
@@ -52,10 +53,8 @@ in
     # withUWSM = true; # One day, but not today
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
-    # TODO: scrolling
     extraConfig = ''
       gesture = 3, horizontal, workspace
-      workspace = 1, layoutopt:direction:right
     '';
     settings = {
       "$mod" = "SUPER";
@@ -117,7 +116,8 @@ in
       decoration = {
         active_opacity = active-opacity;
         inactive_opacity = inactive-opacity;
-        rounding = rounding;
+        inherit rounding;
+        # rounding = rounding;
         shadow = {
           enabled = true;
           range = 20;

@@ -14,7 +14,7 @@
       "$mod,Backspace, killactive," # Close window
       "$mod, Q, killactive"
       "$mod,T, togglefloating," # Toggle Floating
-      "$mod,F, fullscreen" # Toggle Fullscreen
+      "$shiftMod,F, fullscreen" # Toggle Fullscreen
       "$mod,left, movefocus, l" # Move focus left
       "$mod,right, movefocus, r" # Move focus Right
       "$mod,up, movefocus, u" # Move focus Up
@@ -23,6 +23,7 @@
       "$shiftMod,down, focusmonitor, 1" # Focus next monitor
       "$shiftMod,left, layoutmsg, addmaster" # Add to master
       "$shiftMod,right, layoutmsg, removemaster" # Remove from master
+      # "$mod, O, hyprspace:overview:toggle"
 
       "$mod,S, exec, screenshot region" # Screenshot region
       ",PRINT, exec, screenshot monitor" # Screenshot monitor

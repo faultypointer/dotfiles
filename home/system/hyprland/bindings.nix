@@ -13,7 +13,7 @@
 
       "$mod,Backspace, killactive," # Close window
       "$mod, Q, killactive"
-      "$mod,T, togglefloating," # Toggle Floating
+      "$mod,V, togglefloating," # Toggle Floating
       "$shiftMod,F, fullscreen" # Toggle Fullscreen
       "$mod,left, movefocus, l" # Move focus left
       "$mod,right, movefocus, r" # Move focus Right

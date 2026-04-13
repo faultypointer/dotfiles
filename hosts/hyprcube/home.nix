@@ -7,7 +7,7 @@
 
     # Programs
     ../../home/programs/kitty
-    ../../home/programs/nvim
+    # ../../home/programs/nvim
     ../../home/programs/helix
     ../../home/programs/shell
     ../../home/programs/direnv

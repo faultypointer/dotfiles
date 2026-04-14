@@ -36,6 +36,12 @@
 
       language-server = {
         tinymist.config = {
+          # use preconfigured main file for every typst project
+          # or change per project basis in .helix/language.toml
+          # I find this better than
+          typstExtraArgs = [ "main.typ" ];
+          exportPdf = "onType";
+          outputPath = "$root/out/notes.pdf";
           preview.background.enabled = true;
           preview.background.args = [
             "--data-plane-host=127.0.0.1:23635"
@@ -48,6 +54,11 @@
     };
 
     settings = {
+      # this to set a keybind used to pin the current buffer file as main
+      # don't even know if this works or not
+      # keys.normal = {
+      #   "C-p" = '':lsp-workspace-command tinymist.pinMain "%sh{realpath %{buffer_name}}"'';
+      # };
       editor = {
         default-yank-register = "+";
         soft-wrap.enable = true;

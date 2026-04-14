@@ -36,10 +36,7 @@
 
       language-server = {
         tinymist.config = {
-          # use preconfigured main file for every typst project
-          # or change per project basis in .helix/language.toml
-          # I find this better than
-          typstExtraArgs = [ "main.typ" ];
+          projectResolution = "lockDatabase";
           exportPdf = "onType";
           outputPath = "$root/out/notes.pdf";
           preview.background.enabled = true;

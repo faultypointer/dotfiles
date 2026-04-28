@@ -7,7 +7,7 @@
     extraOptions = [
       "--group-directories-first"
       "--no-quotes"
-      "--git-ignore"
+      # "--git-ignore"
       "--icons=always"
     ];
   };

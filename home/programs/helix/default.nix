@@ -4,13 +4,19 @@
 
   # permanent LSPs:
   home.packages = with pkgs; [
+    # nix
     nixd
     nixfmt
 
+    # markdown
     marksman
     harper
 
+    # typst
     tinymist
+
+    #python
+    ty
   ];
 
   programs.helix = {
@@ -18,6 +24,15 @@
 
     languages = {
       language = [
+        {
+          name = "typst";
+          auto-format = true;
+          soft-wrap.wrap-indicator = "";
+          language-servers = [
+            "tinymist"
+            "harper-ls"
+          ];
+        }
         {
           name = "nix";
           auto-format = true;
@@ -36,6 +51,7 @@
 
       language-server = {
         tinymist.config = {
+          typstExtraArgs = [ "main.typ" ];
           projectResolution = "lockDatabase";
           exportPdf = "onType";
           outputPath = "$root/out/notes.pdf";

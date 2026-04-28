@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   fonts = {
     packages = with pkgs; [
@@ -20,6 +21,7 @@
       openmoji-color
       twemoji-color-font
       fantasque-sans-mono
+      iosevka
     ];
 
     enableDefaultPackages = false;

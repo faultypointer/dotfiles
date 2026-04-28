@@ -35,6 +35,9 @@
       "$shiftMod,E, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji" # Emoji picker with wofi
       "$mod,F2, exec, night-shift" # Toggle night shift
       "$mod,F3, exec, night-shift" # Toggle night shift
+
+      ",xf86poweroff, exec, ${pkgs.hyprlock}/bin/hyprlock"
+
     ]
     ++ (builtins.concatLists (
       builtins.genList (

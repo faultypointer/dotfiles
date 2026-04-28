@@ -44,6 +44,7 @@
       mpv
       qbittorrent
       signal-desktop
+      bitwarden-desktop
 
       gearlever
       appimage-run
@@ -55,6 +56,9 @@
       unzip
       optipng
       btop
+
+      python3
+      uv
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
